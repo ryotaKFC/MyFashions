@@ -1,0 +1,41 @@
+body{
+    margin: 0;
+}
+header{
+    padding:50px 10px;
+    border-bottom:1px;
+    background-color:#fff;
+    color:#fff;
+}
+a {
+	color: #fff;	/*←文字色を白(#fff)に*/
+}
+a:hover {
+	color: #ffa500;	/*←マウスオン時の文字色(#ffa500)に*/
+}
+
+/*アニメーション追加*/
+#menubar li::before {
+    content: "";
+    background: #fff;	/*下線の色*/
+    height: 3px;		/*下線の高さ*/
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+	transition: 0.5s;	/*アニメーションにかける時間*/
+    transition-timing-function: ease-out;
+	transform: scaleX(0);
+}
+
+#menubar li:hover::before {
+	transform: scaleX(1);
+}
+/*アニメーション終わり*/
+
+footer {
+    padding: 30px;
+    text-align: center;
+    font-size: .9rem;
+    color: #777;
+}
