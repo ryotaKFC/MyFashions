@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <fashion class="fashion-detail">
+    <img src="{{ asset('storage/avatar/' . $fashion->photo_path) }}" alt="コーデ画像">
     <h1 class="fashion-name">{{ $fashion->name }}</h1>
     <div class="fashion-info">{{ $fashion->created_at }}</div>
     <!-- <div class="fashion-body">{!! nl2br(e($fashion->body)) !!}</div> -->
