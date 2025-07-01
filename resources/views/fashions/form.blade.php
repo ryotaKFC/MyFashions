@@ -1,7 +1,7 @@
 @csrf 
 <dl class="form-list">
     <dt>写真</dt>
-    <dd><input type="file" name="photo_path" id="photoInput" accept="image/*"></dd>
+    <dd><input type="file" name="photo" id="photoInput" accept="image/*"></dd>
     <img id="preview" style="max-width: 200px; display: none;" />
     <dt>名前</dt>
     <dd><input type="text" name="name" value="{{ old('name') }}"></dd>

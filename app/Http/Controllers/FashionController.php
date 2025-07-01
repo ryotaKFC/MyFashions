@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Fashion;
-use App\Libs\GoogleDrive;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
@@ -44,7 +43,7 @@ class FashionController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|max:20',
-            'photo_path' => 'nullable|image|max:4096',
+            // 'photo_path' => 'required',
             'season' => 'required|max:20',
             'weather' => 'required|max:20',
             'temperature' => 'required|max:2',
@@ -58,24 +57,12 @@ class FashionController extends Controller
         $fashion->temperature = $request->temperature;
         $fashion->humidity = $request->humidity;
 
-    if ($request->hasFile('photo_path')) {
-        $file = $request->file('photo_path');
-
-        // 拡張子をpngに固定（PNG変換する場合）
-        $filename = (auth()->id() ?? 'guest') . '_' . time() . '.png';
-        $path = 'private/img/' . $filename;
-
-        // Intervention Image で PNGに変換して保存
-        $image = Image::make($file)->encode('png');
-        Storage::put($path, $image);
-
-        $fashion->photo_path = $path;
-    }
-        
-        
+        // name属性が'photo'のinputタグをファイル形式に、画像をpublic/avatarに保存
+        $image_path = $request->file('photo')->store('public/avatar/');
+        // 上記処理にて保存した画像に名前を付け、userテーブルのthumbnailカラムに、格納
+        $fashion->photo_path = basename($image_path);
         
         $fashion->save();
-
 
 
         return redirect(route('fashions.index'));
@@ -90,7 +77,7 @@ class FashionController extends Controller
     public function show(Fashion $fashion)
     {
         $data = ['fashion' => $fashion];
-        return view('fashions.show', $data);
+        return view('fashions.show', data: $data);
     }
 
     /**
@@ -134,7 +121,7 @@ class FashionController extends Controller
         $fashion->humidity = $request->humidity;
         $fashion->save();
 
-        return redirect(route('fashions.show', $fashion));
+        return redirect(to: route('fashions.show', $fashion));
     }
 
     /**
