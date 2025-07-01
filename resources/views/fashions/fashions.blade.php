@@ -7,7 +7,7 @@
         {{ $fashion->created_at }}|{{ $fashion->user_id }}
     </div>
     <div class="article-control">
-        @if (!Auth::user()->is_bookmark($fashion->id))
+        @if (!Auth::user()->is_bookmark(fashionId: $fashion->id))
         <form action="{{ route('bookmark.store', $fashion) }}" method="post">
             @csrf
             <button>お気に入り登録</button>
