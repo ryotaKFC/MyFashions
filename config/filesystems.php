@@ -53,6 +53,13 @@ return [
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
         ],
 
+        'google' => [
+            'driver' => 'google',
+            'clientId' => env('752293438957-bv35kahnfgdp7juhbjvk4pjbgf6d9sos.apps.googleusercontent.com'),
+            'clientSecret' => env('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'),
+            'refreshToken' => env('GOOGLE_DRIVE_REFRESH_TOKEN'),
+            'folderId' => env('1tLETNQqXMJUjV72UDMQKfJq0MdEXSwHN'), // 任意のフォルダID
+        ],
     ],
 
     /*
