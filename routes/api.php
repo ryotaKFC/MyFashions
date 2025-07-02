@@ -45,8 +45,8 @@ Route::get('/fashions', function (\Illuminate\Http\Request $request) {
                 'title' => '',
                 'start' => $fashion->created_at->toDateString(),
                 'id' => $fashion->id,
-                'photo_url' => asset('storage/' . $fashion->photo_path),
-                'url' => route('fashions.show', $fashion->id),
+                'photo_url' => asset('storage/avatar/' . $fashion->photo_path),
+                'url' => route('fashions.show', $fashion),
             ];
         });
 });
