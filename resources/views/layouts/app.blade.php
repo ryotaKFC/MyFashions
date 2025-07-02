@@ -13,9 +13,9 @@
         <button id="menu-btn">≡</button>
         <nav id="menu" style="display: none;">
             @if (Auth::check())
-            <li><a href="">TOP</a></li>
-            <li><a href="">ALL</a></li>
-            <li><a href="">Favorite</a></li>
+            <li><a href="{{ route('home') }}">HOME</a></li>
+            <li><a href="{{ route('fashions.index') }}">ALL</a></li>
+            <li><a href="">FAVORITE</a></li>
             
             <form on-submit="return confirm('ログアウトしますか？')" action="{{ route('logout') }}" method="post">
                 @csrf

@@ -10,13 +10,13 @@
         @if (!Auth::user()->is_bookmark(fashionId: $fashion->id))
         <form action="{{ route('bookmark.store', $fashion) }}" method="post">
             @csrf
-            <button>お気に入り登録</button>
+            <button>☆</button>
         </form>
         @else 
         <form action="{{ route('bookmark.destroy', $fashion) }}" method="post">
             @csrf
             @method('delete')
-            <button>お気に入り解除</button>
+            <button>★</button>
         </form>
         @endif
     </div>

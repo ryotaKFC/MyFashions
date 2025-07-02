@@ -2,10 +2,15 @@
 @section('content')
 
 <h1 class="page-header">ホーム画面</h1>
-<p>ようこそ、{{ Auth::user()->name }}さん｜<a href="{{ route('fashions.create') }}">記事を書く</a></p>
+<p>ようこそ、{{ Auth::user()->name }}さん</p>
 
 <!-- カレンダー -->
 <div style="width: 50%;margin: auto" id='calendar'></div>
+
+<!-- コーデ登録ボタン -->
+<p id="create-button"><a href="{{ route('fashions.create') }}">今日のコーデ登録</a></p>
+
+
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -27,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
     calendar.render();
 });
 </script>
+
 
 
 
