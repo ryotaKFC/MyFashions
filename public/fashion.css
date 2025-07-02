@@ -8,7 +8,8 @@ header{
     color:#ffffff;
 }
 a {
-	color: #ffffff;	/*←文字色を白(#fff)に*/
+	color:#ffffff;	/*←文字色を白(#fff)に*/
+    font-size: x-large ;
 }
 a:hover {
 	color: #ffa500;	/*←マウスオン時の文字色(#ffa500)に*/
