@@ -29,7 +29,7 @@
 
         </nav>
         <!-- サイトのタイトル -->
-        <a href="/" class="site-title">MyFashion</a>
+        <a href="/" class="site-title">My Fashion</a>
 
     </header>
     <main class="container">
