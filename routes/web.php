@@ -33,3 +33,4 @@ Route::group(['middleware' => ['auth']], function (){
     Route::delete('/fashions/{fashion}/unbookmark', [BookmarkController::class, 'destroy'])->name('bookmark.destroy');
     Route::get('/bookmarks', [FashionController::class, 'bookmark_fashions'])->name('bookmarks');
 });
+Route::get('/fashions/{fashion}', [FashionController::class, 'show'])->name('fashions.show');

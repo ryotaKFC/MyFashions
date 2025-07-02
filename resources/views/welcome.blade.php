@@ -10,4 +10,4 @@
     <a class="btn" href="{{ route('login') }}">ログイン</a>
     @endauth
 </div>
-@endsection()
+@endsection() 
