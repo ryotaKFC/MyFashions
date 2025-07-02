@@ -9,7 +9,8 @@ header{
 }
 a {
 	color:#ffffff;	/*←文字色を白(#fff)に*/
-    font-size: x-large ;
+    font-size: .1000rem ;
+    text-align: center;
 }
 a:hover {
 	color: #ffa500;	/*←マウスオン時の文字色(#ffa500)に*/
