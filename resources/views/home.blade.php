@@ -1,54 +1,40 @@
 @extends('layouts.app')
 @section('content')
 
-    <div style="width: 50%;margin: auto">
-        <div id='calendar'></div>
-    </div>
+<h1 class="page-header">ホーム画面</h1>
+<p>ようこそ、{{ Auth::user()->name }}さん</p>
+
+<!-- カレンダー -->
+<div style="width: 50%;margin: auto" id='calendar'></div>
+
+<!-- コーデ登録ボタン -->
+<p id="create-button"><a href="{{ route('fashions.create') }}">今日のコーデ登録</a></p>
+
 
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
 <script>
-    // document.addEventListener('DOMContentLoaded', function () {
-    //     var calendarEl = document.getElementById('calendar');
-    //     var calendar = new FullCalendar.Calendar(calendarEl, {
-    //         initialView: 'dayGridMonth',
-    //     });
-    //     calendar.render();
-    // });
-        document.addEventListener('DOMContentLoaded', function () {
-        var calendarEl = document.getElementById('calendar');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'dayGridMonth',
+document.addEventListener('DOMContentLoaded', function () {
+    const calendarEl = document.getElementById('calendar');
+    const calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        events: '/api/fashions',
 
-            // イベントを取得するAPI
-            events: '/api/fashions',
-
-            // 各イベントを画像付きで描画
-            eventContent: function(arg) {
-                const photoUrl = arg.event.extendedProps.photo_url;
-                const detailUrl = arg.event.extendedProps.url;
-
-                return {
-                    html: `
-                        <a href="${detailUrl}" target="_blank">
-                            <img src="${photoUrl}" style="width: 100%; max-width: 60px; border-radius: 4px;">
-                        </a>
-                    `
-                };
-            }
-        });
-
-        calendar.render();
+        eventContent: function (arg) {
+            const img = document.createElement('img');
+            img.src = arg.event.extendedProps.photo_url;
+            img.className = 'calendar_img';
+            img.style.maxWidth = '100%';
+            img.style.display = 'block';
+            return { domNodes: [img] };
+        }
     });
+
+    calendar.render();
+});
 </script>
 
-<h1 class="page-heading">マイページ</h1>
-<p>ようこそ、{{ Auth::user()->name }}さん｜<a href="{{ route('fashions.create') }}">記事を書く</a></p>
-<style>
-    img {
-        max-width: 40px;
-        margin: 2px;
-    }
-</style>
+
+
 
 @include('fashions.fashions')
 @endsection()

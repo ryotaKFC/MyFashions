@@ -19,20 +19,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route::get('/api/fashions', function () {
-//     return Fashion::select('id', 'user_id', 'photo_path', 'created_at')
-//         ->get()
-//         ->map(function ($fashion) {
-//             return [
-//                 'title' => '',
-//                 'start' => $fashion->created_at->toDateString(),
-//                 'id' => $fashion->id,
-//                 'photo_url' => asset('storage/' . $fashion->photo_path),
-//                 'url' => route('fashions.show', $fashion->id), // ← 詳細ページへのリンク
-//             ];
-//         });
-// });
-
 
 Route::get('/fashions', function (\Illuminate\Http\Request $request) {
     $start = $request->query('start');
@@ -45,8 +31,8 @@ Route::get('/fashions', function (\Illuminate\Http\Request $request) {
                 'title' => '',
                 'start' => $fashion->created_at->toDateString(),
                 'id' => $fashion->id,
-                'photo_url' => asset('storage/' . $fashion->photo_path),
-                'url' => route('fashions.show', $fashion->id),
+                'photo_url' => asset('storage/avatar/' . $fashion->photo_path),
+                'url' => route('fashions.show', $fashion),
             ];
         });
 });

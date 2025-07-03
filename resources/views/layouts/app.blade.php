@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="/fashion.css">
+    <!-- <link rel="stylesheet" href="/fashion.css"> -->
 </head>
 <body>
     <header>
@@ -13,9 +13,9 @@
         <button id="menu-btn">≡</button>
         <nav id="menu" style="display: none;">
             @if (Auth::check())
-            <li><a href="">TOP</a></li>
-            <li><a href="">ALL</a></li>
-            <li><a href="">Favorite</a></li>
+            <li><a href="{{ route('home') }}">HOME</a></li>
+            <li><a href="{{ route('fashions.index') }}">ALL</a></li>
+            <li><a href="">FAVORITE</a></li>
             
             <form on-submit="return confirm('ログアウトしますか？')" action="{{ route('logout') }}" method="post">
                 @csrf
@@ -29,7 +29,7 @@
 
         </nav>
         <!-- サイトのタイトル -->
-        <a href="/" class="site-title">My Fashion</a>
+        <a href="{{ route('home') }}" class="site-title">MyFashion</a>
 
     </header>
     <main class="container">
