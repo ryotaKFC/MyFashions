@@ -17,11 +17,12 @@
         const calendarEl = document.getElementById('calendar');
 
         const calendar = new FullCalendar.Calendar(calendarEl, {
+            // initialView: 'listWeek',
             initialView: 'dayGridMonth',
             events: '/api/fashions',
             eventContent: function(arg) {
                 const imageUrl = arg.event.extendedProps.image_url;
-                let customHtml = `<img src="${imageUrl}" style="width:100%; height:100px; object-fit:cover; border-radius:8px;" />`;
+                let customHtml = `<img src="${imageUrl}" style="width:100%; height:50px; object-fit:cover; border-radius:8px;" />`;
                 return { html: customHtml };
             },
         });
