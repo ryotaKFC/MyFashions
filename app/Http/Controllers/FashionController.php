@@ -41,7 +41,6 @@ class FashionController extends Controller
      */
     public function store(Request $request)
     {
-        print_r('aaaa');
         $this->validate($request, [
             'name' => 'required|max:20',
             // 'photo_path' => 'required',
@@ -62,7 +61,6 @@ class FashionController extends Controller
         $image_path = $request->file('photo')->store('public/avatar/');
         // 上記処理にて保存した画像に名前を付け、userテーブルのthumbnailカラムに、格納
         $fashion->photo_path = basename($image_path);
-        print_r($fashion->photo_path);
         $fashion->save();
 
 
