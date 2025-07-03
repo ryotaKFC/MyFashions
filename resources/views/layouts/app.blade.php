@@ -29,7 +29,7 @@
 
         </nav>
         <!-- サイトのタイトル -->
-        <a href="/" class="site-title">MyFashion</a>
+        <a href="{{ route('home') }}" class="site-title">MyFashion</a>
 
     </header>
     <main class="container">
