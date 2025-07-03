@@ -1,10 +1,17 @@
 @foreach ($fashions as $fashion)
 <fashion class="fashion-item">
-    <div class="fashion-name">
-        <a href="{{ route('fashions.show', $fashion) }}">{{ $fashion->name }}</a>
+    <div class="fashion-photo">
+        <a href="{{ route('fashions.show', $fashion) }}">
+            <img src="{{ asset('storage/avatar/' . $fashion->photo_path) }}" width="200px">
+        </a>
     </div>
     <div class="fashion-info">
-        {{ $fashion->created_at }}|{{ $fashion->user_id }}
+        #{{ $fashion->season }}
+        #{{ $fashion->weather }}
+        #{{ $fashion->temperature }}
+        #{{ $fashion->humidity }}
+        <br>
+        {{ $fashion->created_at }}
     </div>
     <div class="article-control">
         @if (!Auth::user()->is_bookmark(fashionId: $fashion->id))
