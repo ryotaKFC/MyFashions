@@ -7,11 +7,17 @@ header{
     background-color:#d5c1eb;
     color:#ffffff;
 }
+.page-header{
+    color: #d5c1eb;
+    font-size: 2.0rem;
+}
 #menu-bt{
     right: 30px;
 	bottom: 30px;
 }
-.site-title  {
+.site-title a{
+    display:inline-block;
+    position: relative;
 	color:#ffffff;	/*←文字色を白(#fff)に*/
      text-align: center;
     font-size: 1.8rem ;
