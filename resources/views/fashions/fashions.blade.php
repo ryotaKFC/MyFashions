@@ -1,4 +1,7 @@
 @foreach ($fashions as $fashion)
+@if ($fashion->user_id != Auth::user()->id)
+@continue
+@else
 <fashion class="fashion-item">
     <div class="fashion-photo">
         <a href="{{ route('fashions.show', $fashion) }}">
@@ -28,5 +31,6 @@
         @endif
     </div>
 </fashion>
+@endif
 @endforeach
 {{ $fashions->links() }}
