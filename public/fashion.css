@@ -7,6 +7,10 @@ header{
     background-color:#d5c1eb;
     color:#ffffff;
 }
+.page-header{
+    color: #d5c1eb;
+    font-size: 2.0rem;
+}
 #menu-bt{
     right: 30px;
 	bottom: 30px;
