@@ -143,4 +143,24 @@ class FashionController extends Controller
         ];
         return view('fashions.bookmarks', $data);
     }
+
+    public function calendar_event_fetch(Request $request)
+    {
+        $userId = \Auth::id();
+
+        $fashions = Fashion::where('user_id', $userId)->get();
+
+        // FullCalendar形式に変換
+        $events = $fashions->map(function ($fashion) {
+            return [
+                'id' => $fashion->id,
+                'title' => '',
+                'start' => $fashion->created_at->toDateString(), 
+                'image_url' => asset('storage/avatar/' . $fashion->photo_path),
+                'url' => route('fashions.show', $fashion),
+            ];
+        });
+
+        return response()->json($events);
+    }
 }
