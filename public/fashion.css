@@ -19,7 +19,7 @@ header{
     display:inline-block;
     position: relative;
 	color:#ffffff;	/*←文字色を白(#fff)に*/
-     text-align: center;
+    text-align: center;
     font-size: 1.8rem ;
 }
 a:hover {
