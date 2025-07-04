@@ -20,7 +20,7 @@ class FashionController extends Controller
         $direction = $request->query('direction', 'desc');
 
         // ソート可能なカラムを制限（不正防止）
-        $allowedSorts = ['created_at', 'name'];
+        $allowedSorts = ['created_at', 'season','weather','temperature','humidity'];
         $allowedDirections = ['asc', 'desc'];
 
         if (!in_array($sort, $allowedSorts)) $sort = 'created_at';
