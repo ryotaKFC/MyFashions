@@ -19,24 +19,3 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
-Route::get('/fashions', function (Request $request) {
-    $start = $request->query('start');
-    $end = $request->query('end');
-    $user_id = $request->query('user_id');
-
-    return response()->json(
-        Fashion::whereBetween( 'created_at', [$start, $end])
-            ->where('user_id', Auth::user()->id)
-            ->get()
-            ->map(function ($fashion) {
-                return [
-                    'title' => '',
-                    'start' => $fashion->created_at->toDateString(),
-                    'id' => $fashion->id,
-                    'photo_url' => asset('storage/avatar/' . $fashion->photo_path),
-                    'url' => route('fashions.show', $fashion),
-                ];
-            })
-        );
-});

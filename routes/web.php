@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Fashion;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FashionController;
@@ -37,4 +38,4 @@ Route::group(['middleware' => ['auth']], function (){
         return view('fashions.modal', compact('fashion'));
     });
 });
-
+Route::get('/api/calendarevent', [FashionController::class, 'calendar_event_fetch'])->middleware('auth');
