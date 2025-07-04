@@ -14,11 +14,24 @@ class FashionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $fashions = Fashion::orderBy('created_at', 'desc')->paginate(9);
-        $data = ['fashions' => $fashions];
-        return view('fashions.index', $data);
+        $sort = $request->query("sort", 'created_at');
+        $direction = $request->query('direction', 'desc');
+
+        // ソート可能なカラムを制限（不正防止）
+        $allowedSorts = ['created_at', 'name'];
+        $allowedDirections = ['asc', 'desc'];
+
+        if (!in_array($sort, $allowedSorts)) $sort = 'created_at';
+        if (!in_array($direction, $allowedDirections)) $direction = 'desc';
+        
+        $fashions = Fashion::orderBy($sort, $direction)->paginate(9);
+        // $data = ['fashions' => $fashions];
+        // return view('fashions.index', $data);
+        $fashions = Fashion::orderBy($sort, $direction)->paginate(10);
+
+        return view('fashions.index', compact('fashions', 'sort', 'direction'));
     }
 
     /**

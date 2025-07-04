@@ -40,6 +40,7 @@
     <footer>
         &copy; チームブロッコリー制作物
     </footer>
+    <!-- @stack('scripts') -->
 </body>
 </html>
 

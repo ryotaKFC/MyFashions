@@ -38,4 +38,4 @@ Route::group(['middleware' => ['auth']], function (){
         return view('fashions.modal', compact('fashion'));
     });
 });
-Route::get('/api/fashions', [FashionController::class, 'calendar_event_fetch'])->middleware('auth');
+Route::get('/api/calendarevent', [FashionController::class, 'calendar_event_fetch'])->middleware('auth');
