@@ -10,26 +10,30 @@
 <body>
     <header>
         <!-- ハンバーガーメニュー -->
-        <button id="menu-btn">≡</button>
-        <nav id="menu" style="display: none;">
-            @if (Auth::check())
-            <li><a href="{{ route('home') }}">HOME</a></li>
-            <li><a href="{{ route('fashions.index') }}">ALL</a></li>
-            <li><a href="">FAVORITE</a></li>
-            
-            <form on-submit="return confirm('ログアウトしますか？')" action="{{ route('logout') }}" method="post">
-                @csrf
-                <button type="submit">ログアウト</button>
-            </form>
-
-            @else
-            <li><a href="{{ route('login') }}">ログイン</a></li>
-            <li><a href="{{ route('register') }}">会員登録</a></li>
-            @endif
-
-        </nav>
+         <div>
+             <button id="menu-btn">≡</button>
+             <nav id="menu" style="display: none;">
+                 @if (Auth::check())
+                 <li><a href="{{ route('home') }}">HOME</a></li>
+                 <li><a href="{{ route('fashions.index') }}">ALL</a></li>
+                 <li><a href="">FAVORITE</a></li>
+                 
+                 <form on-submit="return confirm('ログアウトしますか？')" action="{{ route('logout') }}" method="post">
+                     @csrf
+                     <button type="submit">ログアウト</button>
+                 </form>
+     
+                 @else
+                 <li><a href="{{ route('login') }}">ログイン</a></li>
+                 <li><a href="{{ route('register') }}">会員登録</a></li>
+                 @endif
+     
+             </nav>
+         </div>
         <!-- サイトのタイトル -->
-        <h1><a href="{{ route('home') }}" class="site-title">MyFashion</a></h1>
+        <div>
+            <h1><a href="{{ route('home') }}" class="site-title">MyFashion</a></h1>
+         </div>
 
     </header>
     <main class="container">
