@@ -1,29 +1,55 @@
 body{
     margin: 0;
 }
-header{
-    padding:50px 10px;
-    border-bottom:1px;
-    background-color:#d5c1eb;
-    color:#ffffff;
+header {
+  height: 100px; 
+  padding: 0 10px;
+  border-bottom: 1px solid #ccc; 
+  background-color: #d0ffe0;
+  color: #ffffff;
+  display: flex;
+  align-items: center; 
 }
-.page-header{
-    color: #d5c1eb;
-    font-size: 2.0rem;
+a:link{
+   color:#0e4a12;
 }
-#menu-bt{
-    right: 30px;
-	bottom: 30px;
+:visited{
+    color:#0e4a12 ;
 }
-.site-title a{
-    display:inline-block;
-    position: relative;
-	color:#ffffff;	/*←文字色を白(#fff)に*/
-    text-align: center;
-    font-size: 1.8rem ;
+.header-left {
+  font-size: 1.3rem;
+   flex:.5;
+   position: relative;
+   top: 8px; 
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.header-center {
+  font-size: 1.3rem;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 a:hover {
-	color: #ffa500;	/*←マウスオン時の文字色(#ffa500)に*/
+	color: #777;
+}
+
+#create-button a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color:#0e4a12; /* ボタンの背景色 */
+  color: #ffffff;            /* 文字色 */
+  text-decoration: none;     /* 下線を消す */
+  border-radius: 8px;        /* 角を丸くする */
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+#create-button a:hover {
+  background-color:#777 ; /* ホバー時の色 */
 }
 
 
