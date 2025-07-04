@@ -10,7 +10,7 @@
 <body>
     <header>
         <!-- ハンバーガーメニュー -->
-         <div>
+         <div class="header-left">
              <button id="menu-btn">≡</button>
              <nav id="menu" style="display: none;">
                  @if (Auth::check())
@@ -31,7 +31,7 @@
              </nav>
          </div>
         <!-- サイトのタイトル -->
-        <div>
+        <div class="header-center">
             <h1><a href="{{ route('home') }}" class="site-title">MyFashion</a></h1>
          </div>
 
