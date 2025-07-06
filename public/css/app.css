@@ -1,9 +1,12 @@
-/* CSSコード */
+/* 日本語フォント */
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Zen+Maru+Gothic&display=swap');
+/* 英語フォント */
 @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
 
 body{
     margin: 0;
-    font-family: 'Itim', cursive;
+    font-family: 'Itim', 'Zen Maru Gothic', sans-serif;
 }
 header {
   height: 100px; 
