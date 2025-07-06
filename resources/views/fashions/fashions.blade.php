@@ -9,15 +9,14 @@
         </a>
     </div>
     <div class="fashion-info">
-        #{{ $fashion->season }}
-        #{{ $fashion->weather }}
-        #{{ $fashion->temperature }}
-        #{{ $fashion->humidity }}
-        #{{ $fashion->luck }}
-        #{{ $fashion->comment }}
-        <br>
-        {{ $fashion->created_at }}
+        <div class="fashion-info-item">#{{ $fashion->season }}</div>
+        <div class="fashion-info-item">#{{ $fashion->weather }}</div>
+        <div class="fashion-info-item">#{{ $fashion->temperature }}</div>
+        <div class="fashion-info-item">#{{ $fashion->humidity }}</div>
+        <div class="fashion-info-item">#{{ $fashion->luck }}</div>
+        <div class="fashion-info-item">#{{ $fashion->comment }}</div>
     </div>
+    <div class="fashion-info-created_at">{{ $fashion->created_at }}</div>
     <div class="article-control">
         @if (!Auth::user()->is_bookmark(fashionId: $fashion->id))
         <form action="{{ route('bookmark.store', $fashion) }}" method="post">
@@ -36,3 +35,17 @@
 @endif
 @endforeach
 {{ $fashions->links() }}
+
+
+<!-- <style>
+    .fashion-photo {
+        text-align: center;
+    }
+    .fashion-info {
+        display: flex;
+    }
+    .fashion-info-item {
+        color:rgb(65, 142, 230);
+        margin: 0px 3px;
+    }
+</style> -->

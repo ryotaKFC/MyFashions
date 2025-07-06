@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="/fashion.css">
+    <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
     <header>
@@ -16,13 +16,13 @@
             <nav id="side-menu">
                 <ul>
                     @if (Auth::check())
-                        <li><a href="{{ route('home') }}">HOME</a></li>
+                        <li ><a href="{{ route('home') }}">HOME</a></li>
                         <li><a href="{{ route('fashions.index') }}">ALL</a></li>
                         <li><a href="#">FAVORITE</a></li>
                         <li>
                             <form onsubmit="return confirm('ログアウトしますか？')" action="{{ route('logout') }}" method="post">
                                 @csrf
-                                <button type="submit">ログアウト</button>
+                                <button type="submit" id="logout-btn">ログアウト</button>
                             </form>
                         </li>
                     @else
@@ -71,12 +71,26 @@
 
 
 <style>
+    /* スタイル設定 */
     #menu-btn {
         font-size: 100px;
         background-color: rgba(0, 0, 0, 0);
         border: 0px;
     }
-    /* 基本のサイドメニュー */
+    #menu-btn:hover {
+        color: rgba(0, 0, 0, 0.4);
+    }
+    #side-menu li a:hover,
+    #side-menu li button:hover{
+        color: rgba(255, 255, 255, 0.4);
+    }
+    #logout-btn {
+        position: fixed;
+        bottom: 0;
+        padding-bottom: 40px;
+    }
+
+    /* サイドメニュー処理 */
     #side-menu {
         position: fixed;
         top: 0;

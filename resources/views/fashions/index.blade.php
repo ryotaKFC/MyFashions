@@ -21,5 +21,16 @@
         <button type="submit">並び替え</button>
     </form>
 </div>
-@include('fashions.fashions')
-@endsection()
+<div class="fashions">
+    @include('fashions.fashions')
+</div>
+<!-- <style>
+    .fashions {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+</style> -->
+@endsection
+
+
