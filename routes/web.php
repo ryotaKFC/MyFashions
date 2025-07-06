@@ -19,13 +19,6 @@ use App\Http\Controllers\BookmarkController;
 Route::get('/', function () {
     return view('welcome');
 });
-// Route::get('/fashions', action: [FashionController::class, 'index'])->name('fashions.index');
-// Route::get('/fashions/create', [FashionController::class, 'create'])->name('fashions.create');
-// Route::post('/fashions', [FashionController::class, 'store'])->name('fashions.store');
-// Route::get('/fashions/{fashion}', [FashionController::class, 'show'])->name('fashions.show');
-// Route::get('/fashions/{fashion}/edit', [FashionController::class, 'edit'])->name('fashions.edit');
-// Route::patch('/fashions/{fashion}', [FashionController::class, 'update'])->name('fashions.update');
-
 Route::group(['middleware' => ['auth']], function (){
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::resource('/fashions', FashionController::class);
