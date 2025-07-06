@@ -5,17 +5,17 @@
 <fashion class="fashion-item">
     <div class="fashion-photo">
         <!-- お気に入りボタン -->
-        <div class="fashion-control">
+        <div class="favorite-btn">
             @if (!Auth::user()->is_bookmark(fashionId: $fashion->id))
             <form action="{{ route('bookmark.store', $fashion) }}" method="post">
                 @csrf
-                <button class="favorite-btn">☆</button>
+                <button>☆</button>
             </form>
             @else 
             <form action="{{ route('bookmark.destroy', $fashion) }}" method="post">
                 @csrf
                 @method('delete')
-                <button class="favorite-btn">★</button>
+                <button>★</button>
             </form>
             @endif
         </div>
@@ -54,7 +54,7 @@
     }
 
     /* お気に入りボタンのスタイル */
-    .favorite-btn {
+    .favorite-btn button {
         background-color: rgba(0, 0, 0, 0);
         color: rgb(234, 234, 41);
         font-size: 25px;
@@ -68,7 +68,7 @@
         position: relative;
         display: inline-block;
     }
-    .fashion-control {
+    .favorite-btn {
         position: absolute;
         top: 0px;
         left: 0px;
