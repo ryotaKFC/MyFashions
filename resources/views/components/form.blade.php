@@ -13,8 +13,8 @@
     <dd><input type="text" name="temperature" value="{{ old('temperature') }}"></dd>
     <dt>湿度</dt>
     <dd><input type="text" name="humidity" value="{{ old('humidity') }}"></dd>
-    <dt>コメント</dt>
-    <dd><input type="text" name="comment" value="{{ old('comment') }}"></dd>
+    <!-- <dt>コメント</dt>
+    <dd><input type="text" name="comment" value="{{ old('comment') }}"></dd> -->
 
 </dl>
 
