@@ -24,13 +24,14 @@
 <div class="fashions">
     @include('fashions.fashions')
 </div>
-<!-- <style>
+<style>
     .fashions {
         display: flex;
-        align-items: center;
         flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
-</style> -->
+</style>
 @endsection
 
 
