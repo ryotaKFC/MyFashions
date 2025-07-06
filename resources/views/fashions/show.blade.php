@@ -16,11 +16,12 @@
     @endif
     <!-- コーデの詳細の表示 -->
     <img src="{{ asset('storage/avatar/' . $fashion->photo_path) }}" alt="コーデ画像">
-    <!-- <h1 class="fashion-name">{{ $fashion->name }}</h1> -->
     <div class="fashion-info">#{{ $fashion->season }}</div>
     <div class="fashion-info">#{{ $fashion->weather }}</div>
     <div class="fashion-info">#{{ $fashion->temperature }}</div>
     <div class="fashion-info">#{{ $fashion->humidity }}</div>
+    <div class="fashion-info">#{{ $fashion->luck }}</div>
+    <div class="fashion-info">#{{ $fashion->comment }}</div>
     <div class="fashion-info">{{ $fashion->created_at }}</div>
     <!-- <div class="fashion-body">{!! nl2br(e($fashion->body)) !!}</div> -->
 

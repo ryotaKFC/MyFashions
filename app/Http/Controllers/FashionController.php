@@ -55,21 +55,28 @@ class FashionController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|max:20',
             // 'photo_path' => 'required',
             'season' => 'required|max:20',
             'weather' => 'required|max:20',
             'temperature' => 'required|max:2',
             'humidity' => 'required|max:2',
+            'comment' => 'max:20',
         ]);
         $fashion = new Fashion();
         $fashion->user_id = auth()->id();
-        $fashion->name = $request->name;
+        // $fashion->name = $request->name;
         $fashion->season = $request->season;
         $fashion->weather = $request->weather;
         $fashion->temperature = $request->temperature;
         $fashion->humidity = $request->humidity;
-
+        $fashion->luck = $this->get_random_luck();
+        // コメント処理
+        if($request->comment != '')
+        $fashion->comment = $request->comment;
+        else
+        $fashion->comment = $this->get_random_comment();
+        
+        // 画像処理
         // name属性が'photo'のinputタグをファイル形式に、画像をpublic/avatarに保存
         $image_path = $request->file('photo')->store('public/avatar/');
         // 上記処理にて保存した画像に名前を付け、userテーブルのthumbnailカラムに、格納
@@ -116,21 +123,29 @@ class FashionController extends Controller
     {
         $this->authorize($fashion);
         $this->validate($request, [
-            'name' => 'required|max:20',
-            'photo_path' => '',
+            // 'photo_path' => '',
             'season' => 'required|max:20',
             'weather' => 'required|max:20',
             'temperature' => 'required|max:2',
             'humidity' => 'required|max:2',
+            'comment' => 'max:20',
 
         ]);
         $fashion = new Fashion();
-        $fashion->name = $request->name;
         $fashion->photo_path = $request->photo_path;
         $fashion->season = $request->season;
         $fashion->weather = $request->weather;
         $fashion->temperature = $request->temperature;
         $fashion->humidity = $request->humidity;
+        // コメント処理
+        if($request->comment != '')
+        $fashion->comment = $request->comment;
+        else
+        $fashion->comment = $this->get_random_comment();
+        //　画像処理
+        $image_path = $request->file('photo')->store('public/avatar/');
+        $fashion->photo_path = basename($image_path);
+        
         $fashion->save();
 
         return redirect(to: route('fashions.show', $fashion));
@@ -175,5 +190,24 @@ class FashionController extends Controller
         });
 
         return response()->json($events);
+    }
+
+
+    public function get_random_luck(){
+        $luck_comment = [
+            '大吉',
+            'スーパー吉',
+            '超吉',
+            '神吉',
+            'Nice吉',
+        ];
+        return $luck_comment[rand(0, count($luck_comment) - 1)];
+    }
+    public function get_random_comment(){
+        $comment = [
+            '服好きと繋がりたい',
+            'テスト',
+        ];
+        return $comment[rand(0, count($comment) - 1)];
     }
 }

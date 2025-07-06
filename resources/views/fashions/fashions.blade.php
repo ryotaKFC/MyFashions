@@ -13,6 +13,8 @@
         #{{ $fashion->weather }}
         #{{ $fashion->temperature }}
         #{{ $fashion->humidity }}
+        #{{ $fashion->luck }}
+        #{{ $fashion->comment }}
         <br>
         {{ $fashion->created_at }}
     </div>
