@@ -27,7 +27,7 @@
                         </li>
                     @else
                         <li><a href="{{ route('login') }}">ログイン</a></li>
-                        <li><a href="{{ route('register') }}">会員登録</a></li>
+                        <li><a href="{{ route('register') }}">新規登録</a></li>
                     @endif
                 </ul>
             </nav>
@@ -71,7 +71,13 @@
 
 
 <style>
-    /* スタイル設定 */
+    /* section全体を中央にしたい */
+    /* section {
+        display: flex;
+        justify-content: center;
+        padding: 30px;
+    } */
+    /* ハンバーガーアイコンスタイル設定 */
     #menu-btn {
         font-size: 100px;
         background-color: rgba(0, 0, 0, 0);
@@ -85,6 +91,7 @@
         color: rgba(255, 255, 255, 0.4);
     }
     #logout-btn {
+        color: rgb(255, 255, 255);
         position: fixed;
         bottom: 0;
         padding-bottom: 40px;
