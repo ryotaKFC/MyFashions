@@ -19,19 +19,34 @@ class FashionController extends Controller
         $sort = $request->query("sort", 'created_at');
         $direction = $request->query('direction', 'desc');
 
-        // ソート可能なカラムを制限（不正防止）
+        $filter = $request->query('filter','');
+        $filter_value = $request->query('filter_value', '');
+
+        // ソート可能なカラムを制限
         $allowedSorts = ['created_at', 'season','weather','temperature','humidity'];
         $allowedDirections = ['asc', 'desc'];
-
         if (!in_array($sort, $allowedSorts)) $sort = 'created_at';
         if (!in_array($direction, $allowedDirections)) $direction = 'desc';
         
-        $fashions = Fashion::orderBy($sort, $direction)->paginate(9);
+        // $fashions = Fashion::orderBy($sort, $direction)->paginate(10);
+
         // $data = ['fashions' => $fashions];
         // return view('fashions.index', $data);
-        $fashions = Fashion::orderBy($sort, $direction)->paginate(10);
 
-        return view('fashions.index', compact('fashions', 'sort', 'direction'));
+        $query = Fashion::query();
+        if ($filter && $filter_value) {
+            $query->where($filter, $filter_value);
+        }
+        $fashions = $query->orderBy($sort, $direction)->paginate(10);
+
+        // return view('fashions.index', compact('fashions', 'sort', 'direction'));
+        return view('fashions.index', [
+            'fashions' => $fashions,
+            'sort' => $sort,
+            'direction' => $direction,
+            'filter' => $filter,
+            'filter_value' => $filter_value,
+        ]);
     }
 
     /**
