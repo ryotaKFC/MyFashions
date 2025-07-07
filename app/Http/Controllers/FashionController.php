@@ -27,11 +27,6 @@ class FashionController extends Controller
         $allowedDirections = ['asc', 'desc'];
         if (!in_array($sort, $allowedSorts)) $sort = 'created_at';
         if (!in_array($direction, $allowedDirections)) $direction = 'desc';
-        
-        // $fashions = Fashion::orderBy($sort, $direction)->paginate(10);
-
-        // $data = ['fashions' => $fashions];
-        // return view('fashions.index', $data);
 
         $query = Fashion::query();
         if ($filter && $filter_value) {
@@ -179,12 +174,32 @@ class FashionController extends Controller
         return redirect(route('fashions.index'));
     }
 
-    public function bookmark_fashions(){
-        $fashions = \Auth::user()->bookmark_fashions()->orderBy('created_at', 'desc')->paginate(9);
-        $data = [
+    public function bookmark_fashions(Request $request){
+        $sort = $request->query("sort", 'created_at');
+        $direction = $request->query('direction', 'desc');
+
+        $filter = $request->query('filter','');
+        $filter_value = $request->query('filter_value', '');
+
+        // ソート可能なカラムを制限
+        $allowedSorts = ['created_at', 'season','weather','temperature','humidity'];
+        $allowedDirections = ['asc', 'desc'];
+        if (!in_array($sort, $allowedSorts)) $sort = 'created_at';
+        if (!in_array($direction, $allowedDirections)) $direction = 'desc';
+
+        $query = Fashion::query();
+        if ($filter && $filter_value) {
+            $query->where($filter, $filter_value);
+        }
+        $fashions = $query->orderBy($sort, $direction)->paginate(10);
+
+        return view('fashions.bookmarks', [
             'fashions' => $fashions,
-        ];
-        return view('fashions.bookmarks', $data);
+            'sort' => $sort,
+            'direction' => $direction,
+            'filter' => $filter,
+            'filter_value' => $filter_value,
+        ]);
     }
 
     public function calendar_event_fetch(Request $request)
