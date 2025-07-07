@@ -65,16 +65,17 @@ class FashionController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            // 'photo_path' => 'required',
             'season' => 'required|max:20',
             'weather' => 'required|max:20',
             'temperature' => 'required|max:2',
             'humidity' => 'required|max:2',
             'comment' => 'max:20',
         ]);
+        if ($request->file('photo') == null) {
+            $this->validate($request, ['photo_path' => 'required',]);
+        }
         $fashion = new Fashion();
         $fashion->user_id = auth()->id();
-        // $fashion->name = $request->name;
         $fashion->season = $request->season;
         $fashion->weather = $request->weather;
         $fashion->temperature = $request->temperature;
@@ -133,7 +134,6 @@ class FashionController extends Controller
     {
         $this->authorize($fashion);
         $this->validate($request, [
-            // 'photo_path' => '',
             'season' => 'required|max:20',
             'weather' => 'required|max:20',
             'temperature' => 'required|max:2',
@@ -141,8 +141,10 @@ class FashionController extends Controller
             'comment' => 'max:20',
 
         ]);
+        if ($request->file('photo') == null) {
+            $this->validate($request, ['photo_path' => 'required',]);
+        }
         $fashion = new Fashion();
-        $fashion->photo_path = $request->photo_path;
         $fashion->season = $request->season;
         $fashion->weather = $request->weather;
         $fashion->temperature = $request->temperature;
