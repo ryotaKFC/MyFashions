@@ -18,7 +18,7 @@
                     @if (Auth::check())
                         <li ><a href="{{ route('home') }}">HOME</a></li>
                         <li><a href="{{ route('fashions.index') }}">ALL</a></li>
-                        <li><a href="#">FAVORITE</a></li>
+                        <li><a href="{{ route('bookmarks') }}">FAVORITE</a></li>
                         <li>
                             <form onsubmit="return confirm('ログアウトしますか？')" action="{{ route('logout') }}" method="post">
                                 @csrf
@@ -46,7 +46,6 @@
     <footer>
         &copy; チームブロッコリー制作物
     </footer>
-    <!-- @stack('scripts') -->
 </body>
 </html>
 
