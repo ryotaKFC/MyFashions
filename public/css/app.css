@@ -43,8 +43,8 @@ a:link{
 #side-menu {
         position: fixed;
         top: 0;
-        left: -500px; /* 最初は隠す */
-        width: 250px;
+        left: -200px; /* 最初は隠す */
+        width: 150px;
         height: 100%;
         background: #222;
         overflow-y: auto;
@@ -60,6 +60,9 @@ a:link{
         font-size: 16px;
         cursor: pointer;
     }
+#logout-btn{
+  text-align: center;
+}    
 .header-center {
   font-size: 1.3rem;
   color: #ffffff;
