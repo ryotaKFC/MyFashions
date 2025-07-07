@@ -1,7 +1,9 @@
 @extends('layouts.app')
 @section('content')
 
-<h1 class="page-header">ホーム画面</h1>
+<section class="page-header">
+    <h1>ホーム画面</h1>
+</section>
 <p>ようこそ、{{ Auth::user()->name }}さん</p>
 
 <!-- カレンダー -->

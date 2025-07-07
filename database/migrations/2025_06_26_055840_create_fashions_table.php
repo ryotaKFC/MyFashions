@@ -15,12 +15,14 @@ class CreateFashionsTable extends Migration
     {
         Schema::create('fashions', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            // $table->string('name');
             $table->string('photo_path');
             $table->string('season');
             $table->string('weather');
             $table->integer('temperature');
             $table->integer('humidity');
+            $table->string('luck');
+            $table->string('comment');
             $table->timestamps();
         });
     }
