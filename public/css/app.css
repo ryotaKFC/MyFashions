@@ -47,11 +47,18 @@ a:link{
         width: 250px;
         height: 100%;
         background: #222;
-        color: rgb(177, 250, 181);
         overflow-y: auto;
         transition: left 0.3s ease;
         z-index: 1000;
         padding: 20px;
+    }
+#side-menu a, #side-menu button {
+        color: rgb(145, 238, 208);
+        text-decoration: none;
+        background: none;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
     }
 .header-center {
   font-size: 1.3rem;
@@ -60,13 +67,12 @@ a:link{
   justify-content: center;
   align-items: center;
 }
-
 #menu-btn:hover {
-        color: rgba(0, 0, 0, 0.4);
+        color: #777(0, 0, 0, 0.4);
     }
 #side-menu li a:hover,
 #side-menu li button:hover{
-        color: rgba(255, 255, 255, 0.4);
+        color: #777(255, 255, 255, 0.4);
     }
 #logout-btn {
         color: rgb(255, 255, 255);
@@ -86,15 +92,6 @@ a:link{
 
 #side-menu li {
         margin-bottom: 15px;
-    }
-
-#side-menu a, #side-menu button {
-        color: white;
-        text-decoration: none;
-        background: none;
-        border: none;
-        font-size: 16px;
-        cursor: pointer;
     }
 a:hover {
 	color: #777;
