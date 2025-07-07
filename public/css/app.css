@@ -15,7 +15,7 @@ header {
   background-color: #d0ffe0;
   color: #ffffff;
   display: flex;
-  align-items: center; 
+  text-align: center;
 }
 a:link{
    color:#0e4a12;
@@ -99,6 +99,7 @@ a:hover {
 
 #create-button a {
   display: inline-block;
+  text-align: center;
   padding: 10px 20px;
   background-color:#0e4a12; /* ボタンの背景色 */
   color: #ffffff;            /* 文字色 */
@@ -111,6 +112,16 @@ a:hover {
 #create-button a:hover {
   background-color:#777 ; /* ホバー時の色 */
 }
+.page-header{
+  text-align: center;
+   color:#0e4a12;
+}
+.your-name{
+  text-align: center;
+  color:#0e4a12;
+}
+
+
 
 
 footer {
