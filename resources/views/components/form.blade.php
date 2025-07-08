@@ -29,9 +29,6 @@
     <dd>
       <input type="number" name="humidity" value="{{ old('humidity') }}" min="0" max="100" step="10"> %
     </dd>
-    <!-- <dt>コメント</dt>
-    <dd><input type="text" name="comment" value="{{ old('comment') }}"></dd> -->
-
 </dl>
 
 <script>
@@ -78,21 +75,21 @@ document.querySelector('select[name="season"]').value = season;
 
                 // 天気コード → 天気表現（例: 晴れ、曇り、雨）
                 const weatherMap = {
-                    0: '晴れ',      // Clear sky
+                    0: '晴れ',
                     1: '晴れ',
                     2: '曇り',
                     3: '曇り',
-                    45: '霧',
-                    48: '霧',
-                    51: '霧雨',
+                    45: '曇り',
+                    48: '曇り',
+                    51: '雨',
                     61: '雨',
                     63: '雨',
-                    65: '強い雨',
+                    65: '雨',
                     71: '雪',
                     73: '雪',
-                    75: '強い雪',
-                    95: '雷',
-                    99: '雷雨'
+                    75: '雪',
+                    95: '雨',
+                    99: '雨'
                 };
                 const weather = weatherMap[weatherCode] || '不明';
 
