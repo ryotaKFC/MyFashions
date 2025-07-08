@@ -9,10 +9,11 @@
         const calendar = new FullCalendar.Calendar(calendarEl, {
             // initialView: 'listWeek',
             initialView: 'dayGridMonth',
+            height: 'auto',
             events: '/api/calendarevent',
             eventContent: function(arg) {
                 const imageUrl = arg.event.extendedProps.image_url;
-                let customHtml = `<img src="${imageUrl}" style="width:100%; height:50px; object-fit:cover; border-radius:8px;" />`;
+                let customHtml = `<img src="${imageUrl}" style="width:100%; height:70px; object-fit:cover; border-radius:8px;" />`;
                 return { html: customHtml };
             },
         });
