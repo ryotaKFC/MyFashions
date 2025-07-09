@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="/css/app.css">
+    <!-- <link rel="stylesheet" href="/css/app.css"> -->
 </head>
 <body>
     <header>
@@ -16,15 +16,13 @@
             <nav id="side-menu">
                 <ul>
                     @if (Auth::check())
-                        <li ><a href="{{ route('home') }}">HOME</a></li>
+                        <li><a href="{{ route('home') }}">HOME</a></li>
                         <li><a href="{{ route('fashions.index') }}">ALL</a></li>
                         <li><a href="{{ route('bookmarks') }}">FAVORITE</a></li>
-                        <li>
-                            <form onsubmit="return confirm('ログアウトしますか？')" action="{{ route('logout') }}" method="post">
-                                @csrf
-                                <button type="submit" id="logout-btn">ログアウト</button>
-                            </form>
-                        </li>
+                        <form onsubmit="return confirm('ログアウトしますか？')" action="{{ route('logout') }}" method="post">
+                            @csrf
+                            <button type="submit" id="logout-btn">ログアウト</button>
+                        </form>
                     @else
                         <li><a href="{{ route('login') }}">ログイン</a></li>
                         <li><a href="{{ route('register') }}">新規登録</a></li>
@@ -67,4 +65,141 @@
         });
     });
 </script>
+<style>
+    /* 日本語フォント */
+    @import url('https://fonts.googleapis.com/css2?family=Itim&family=Zen+Maru+Gothic&display=swap');
+    /* 英語フォント */
+    @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 
+    /* サイト全体設定 */
+    body{
+        margin: 0;
+        font-family: 'Itim', 'Zen Maru Gothic', sans-serif;
+    }
+    a:link{
+       color:#0e4a12;
+    }
+
+    /* ヘッダー部 */
+    header {
+        height: 100px; 
+        padding: 0 10px;
+        border-bottom: 1px solid #ccc; 
+        background-color: #d0ffe0;
+        color: #ffffff;
+        display: flex;
+        text-align: center;
+    }
+
+    .page-header{
+        text-align: center;
+        color:#0e4a12;
+    }
+    .your-name{
+        text-align: center;
+        color:#0e4a12;
+    }
+
+    :visited{
+        color:#0e4a12 ;
+    }
+
+    /* 今日の服装登録ボタン */
+    #create-button {
+        text-align: center;  /* これが親要素の中央寄せ */
+    }
+    #create-button a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0e4a12;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    }
+    #create-button a:hover {
+        background-color:#777 ; /* ホバー時の色 */
+    }
+
+    /* フッター */
+    footer {
+        padding: 30px;
+        text-align: center;
+        font-size: .9rem;
+        color: #777;
+    }
+
+
+    /* ハンバーガーメニュー */
+    #menu-btn {
+        font-size: 4.3rem;
+        padding: 2px 6px;
+        background-color: rgba(0, 0, 0, 0);
+        border: 0px; 
+        border-radius: 1px;       
+        cursor: pointer;
+    }
+    .header-left {
+        font-size: 2rem;
+        flex:.5;
+        position: relative;
+        top: 5px; 
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    #side-menu {
+        position: fixed;
+        top: 0;
+        left: -200px; /* 最初は隠す */
+        width: 150px;
+        height: 100%;
+        background: #222;
+        overflow-y: auto;
+        transition: left 0.3s ease;
+        z-index: 1000;
+        padding: 20px;
+    }
+    #side-menu a, #side-menu button {
+        color: rgb(145, 238, 208);
+        text-decoration: none;
+        background: none;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    .header-center {
+        font-size: 1.3rem;
+        color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    /* メニューを表示 */
+    #side-menu.open {
+        left: 0;
+    }
+    /* メニューの各アイテムの設定 */
+    #side-menu ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    #side-menu li {
+        margin-bottom: 15px;
+    }
+    
+    #side-menu li a:hover,
+    #side-menu li button:hover{
+        color: rgba(255, 255, 255, 0.4);
+    }
+
+    #logout-btn {
+        color: rgb(255, 255, 255);
+        position: absolute;
+        bottom: 30px;
+        left: 25%;
+        padding-bottom: 40px;
+    }
+</style>
