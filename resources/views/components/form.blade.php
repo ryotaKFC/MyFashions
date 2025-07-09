@@ -104,36 +104,46 @@ document.querySelector('select[name="season"]').value = season;
 </script>
 <style>
   body {
-  background: #fffafc;
+  background: #f0f8ff; /* アリスブルー */
   font-family: 'M PLUS Rounded 1c', sans-serif;
   color: #333;
   text-align: center;
   padding: 30px;
 }
 
-h1, .site-title {
-  font-size: 2.5em;
-  font-weight: bold;
-  color: #ff69b4;
-  text-shadow: 1px 1px #fff;
-  margin-bottom: 20px;
+header {
+  background-color: #d0f0fd; /* 明るい水色 */
+  padding: 15px 0;
 }
 
+.site-title, h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #007acc; /* 深めの青 */
+  text-shadow: 1px 1px #fff;
+  margin: 20px 0;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+/* フォーム全体 */
 .form-list {
   display: inline-block;
-  background-color: #ffeef4;
+  background-color: #e6f4ff; /* うすい水色 */
   padding: 30px;
   border-radius: 20px;
-  box-shadow: 0 0 10px #f4d6de;
+  box-shadow: 0 0 10px #a3d8ff;
   text-align: left;
+  margin-bottom: 40px;
 }
 
+/* ラベル部分 */
 .form-list dt {
   font-weight: bold;
   margin-top: 15px;
-  color: #d63384;
+  color: #1a73e8; /* Googleブルーっぽい青 */
 }
 
+/* 入力欄 */
 .form-list dd {
   margin-bottom: 10px;
 }
@@ -144,91 +154,30 @@ select {
   width: 100%;
   padding: 6px 12px;
   border-radius: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #bbb;
   background: #fff;
   font-size: 1em;
   box-sizing: border-box;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
-button, input[type="submit"] {
-  background-color: #ffb6c1;
-  border: none;
-  padding: 10px 20px;
-  color: white;
-  font-weight: bold;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 15px;
-}
-button:hover, input[type="submit"]:hover {
-  background-color: #ff69b4;
-}
-
-a {
-  color: #d63384;
-  font-weight: bold;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-
+/* 画像プレビュー */
 #preview {
   margin-bottom: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 8px #d63384;
-}
-.site-title, h1 {
-  font-size: 2rem; /* ←ここを調整、もとの2.5remより小さく */
-  font-weight: 700;
-  color: #ff69b4;
-  text-shadow: 1px 1px #fff;
-  margin: 20px 0;
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-}
-header {
-  background-color: #d8f3dc;
-  padding: 15px 0;
-}
-<p style="font-size: 1rem; color: #888;">今日はどんなコーデにしよう？🌸</p>
-.form-list dd input[type="file"] {
-  margin-top: 5px;
-  margin-bottom: 15px; /* ← 写真とその次の要素に余白 */
+  box-shadow: 0 0 8px #7bbfff;
 }
 
-input[type="submit"], button {
-  margin-top: 20px;  /* 登録ボタンの上に余白 */
-}
-.form-list {
-  margin-bottom: 40px; /* 下に余白を追加して、画面にくっつきすぎないように */
-}
-/* 写真入力の余白を調整 */
-input[type="file"] {
-  margin-top: 10px;
-  margin-bottom: 20px;  /* 写真と季節の間に余白を追加 */
-  display: block;
-}
-
-/* 登録ボタンの余白を調整 */
-input[type="submit"], button[type="submit"] {
-  margin-top: 25px;   /* 上に余白 */
-  margin-bottom: 10px;
-  display: inline-block;
-}
-
-/* フォーム全体の下にもスペースを */
-.form-list {
-  margin-bottom: 40px;
-}
+/* ボタンまわり */
 .form-buttons {
   text-align: right;
-  margin-top: 20px;
+  margin-top: 25px;
   padding-right: 10px;
 }
 
 .form-buttons input[type="submit"] {
-  background-color: #ffb6c1;
+  background-color: #4aa8ff;
   border: none;
   padding: 10px 20px;
   color: white;
@@ -239,14 +188,94 @@ input[type="submit"], button[type="submit"] {
 }
 
 .form-buttons input[type="submit"]:hover {
-  background-color: #ff69b4;
+  background-color: #007acc;
 }
 
 .form-buttons a {
   margin-left: 15px;
-  color: #006400;
+  color: #007acc;
   font-weight: bold;
   text-decoration: none;
 }
+
+.form-buttons a:hover {
+  text-decoration: underline;
+}
+.form-buttons input[type="submit"] {
+  background: linear-gradient(to bottom, #a8d8ff, #4aa8ff); /* グラデ青 */
+  border: none;
+  padding: 10px 25px;
+  color: white;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 4px 6px rgba(100, 150, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.form-buttons input[type="submit"]:hover {
+  background: linear-gradient(to bottom, #4aa8ff, #007acc);
+  box-shadow: 0 6px 12px rgba(100, 150, 255, 0.6);
+  transform: translateY(-2px);
+}
+.form-buttons a {
+  margin-left: 15px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background-color: #e0f0ff;
+  color: #007acc;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.form-buttons a:hover {
+  background-color: #c0e0ff;
+}
+.form-buttons {
+  text-align: right;
+  margin-top: 25px;
+  padding-right: 10px;
+}
+
+.form-buttons input[type="submit"] {
+  background: linear-gradient(to bottom, #a8d8ff, #4aa8ff);
+  border: none;
+  padding: 10px 25px;
+  color: white;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 4px 6px rgba(100, 150, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.form-buttons input[type="submit"]:hover {
+  background: linear-gradient(to bottom, #4aa8ff, #007acc);
+  box-shadow: 0 6px 12px rgba(100, 150, 255, 0.6);
+  transform: translateY(-2px);
+}
+button, input[type="submit"] {
+  background: linear-gradient(to bottom,rgb(147, 199, 241),hsl(209, 72.50%, 57.30%)); /* グラデーション青 */
+  border: none;
+  padding: 10px 25px;
+  color: white;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 4px 6px rgba(100, 150, 255, 0.4);
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+button:hover, input[type="submit"]:hover {
+  background: linear-gradient(to bottom, #4aa8ff, #007acc);
+  box-shadow: 0 6px 12px rgba(100, 150, 255, 0.6);
+  transform: translateY(-2px);
+}
+
 
 </style>
