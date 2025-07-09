@@ -77,7 +77,7 @@
         font-size: 2.5rem;
         font-style: initial;
         border: 0px;
-        -webkit-text-stroke: 1.5px rgb(0, 0, 0);
+        -webkit-text-stroke: 1.5px rgb(255, 255, 255);
         paint-order: stroke;
     }
 
