@@ -16,12 +16,12 @@
             <nav id="side-menu">
                 <ul>
                     @if (Auth::check())
-                        <li><a href="{{ route('home') }}">HOME</a></li>
-                        <li><a href="{{ route('fashions.index') }}">ALL</a></li>
-                        <li><a href="{{ route('bookmarks') }}">FAVORITE</a></li>
+                        <li><a href="{{ route('home') }}" class="english">HOME</a></li>
+                        <li><a href="{{ route('fashions.index') }}" class="english">ALL</a></li>
+                        <li><a href="{{ route('bookmarks') }}" class="english">FAVORITE</a></li>
                         <form onsubmit="return confirm('ログアウトしますか？')" action="{{ route('logout') }}" method="post">
                             @csrf
-                            <button type="submit" id="logout-btn">ログアウト</button>
+                            <button type="submit" id="logout-btn">LOGOUT</button>
                         </form>
                     @else
                         <li><a href="{{ route('login') }}">ログイン</a></li>
@@ -32,7 +32,7 @@
         </div>
         <!-- サイトのタイトル -->
         <div class="header-center">
-            <h1><a href="{{ route('home') }}" class="site-title">MyFashion</a></h1>
+            <h1><a href="{{ route('home') }}" class="site-title english">MyFashion</a></h1>
          </div>
 
     </header>
@@ -74,6 +74,8 @@
     /* サイト全体設定 */
     body{
         margin: 0;
+    }
+    .english {
         font-family: 'Georgia', serif;
     }
     a:link{

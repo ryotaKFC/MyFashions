@@ -1,5 +1,5 @@
 
-<div style="width: 80%;margin: auto" id='calendar'></div>
+<div style="width: 80%;margin: auto" id='calendar' class="english"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
 <script>
