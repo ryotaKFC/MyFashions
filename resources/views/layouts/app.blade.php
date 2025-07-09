@@ -121,9 +121,6 @@
         color:#0e4a12;
     }
 
-    /* :visited{
-        color:#0e4a12 ;
-    } */
     .site-title:visited,
     .site-title:link
     {
