@@ -67,8 +67,8 @@ class FashionController extends Controller
         $this->validate($request, [
             'season' => 'required|max:20',
             'weather' => 'required|max:20',
-            'temperature' => 'required|max:2',
-            'humidity' => 'required|max:2',
+            'temperature' => 'required|max:3',
+            'humidity' => 'required|max:3',
             'comment' => 'max:20',
         ]);
         if ($request->file('photo') == null) {
@@ -136,8 +136,8 @@ class FashionController extends Controller
         $this->validate($request, [
             'season' => 'required|max:20',
             'weather' => 'required|max:20',
-            'temperature' => 'required|max:2',
-            'humidity' => 'required|max:2',
+            'temperature' => 'required|max:3',
+            'humidity' => 'required|max:3',
             'comment' => 'max:20',
 
         ]);
@@ -209,9 +209,15 @@ class FashionController extends Controller
         $userId = \Auth::id();
 
         $fashions = Fashion::where('user_id', $userId)->get();
+        
+        // created_at の日付ごとにグループ化して、各日からランダムで1件ずつ抽出
+        $grouped = $fashions->groupBy(function ($item) {
+            return $item->created_at->toDateString(); // 例: "2025-06-26"
+        });
 
         // FullCalendar形式に変換
-        $events = $fashions->map(function ($fashion) {
+        $events = $grouped->map(function ($items) {
+            $fashion = $items->random(); // 同じ日付内からランダムに1件
             return [
                 'id' => $fashion->id,
                 'title' => '',
@@ -219,7 +225,7 @@ class FashionController extends Controller
                 'image_url' => asset('storage/avatar/' . $fashion->photo_path),
                 'url' => route('fashions.show', $fashion),
             ];
-        });
+        })->values();
 
         return response()->json($events);
     }
