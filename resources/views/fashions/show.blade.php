@@ -35,11 +35,7 @@
     @can('update', $fashion)
     <div class="fashion-control">
         <a href="{{ route('fashions.edit', $fashion) }}">編集</a>
-        <form action="{{ route('fashions.destroy', $fashion) }}" method="post">
-            @csrf
-            @method('delete')
-            <button type="submit">削除</button>
-        </form>
+        <a href="{{ route('fashions.destroy', $fashion) }}" class="destroy_btn">削除</a>
     </div>
     @endcan
 </section>
@@ -51,7 +47,7 @@
         padding: 20px;
     } */
     .fashion-photo {
-        /* width: 500px; */
+        width: 400px;
         margin: 40px;
     }
     .fashion-photo img{
@@ -63,6 +59,12 @@
 
     .fashion-info {
         display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 400px;
+        margin: auto;
+        justify-content: space-evenly;
+        color:rgb(65, 142, 230);
     }
     .fashion-info-item {
         color:rgb(65, 142, 230);
@@ -92,5 +94,20 @@
         z-index: 2;
     }
 
+    /* 編集、削除ボタン */
+    .fashion-control {
+        margin: 5px 20px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;   
+    }
+    .fashion-control  {
+        border: none;
+        color: rgb(255, 0, 0);
+        background-color: rgba(255, 255, 255, 0);
+        border-radius:8px;
+    }
+    
 </style>
 @endsection
