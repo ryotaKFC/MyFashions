@@ -142,7 +142,7 @@
 
     /* ハンバーガーメニュー */
     #menu-btn {
-        font-size: 4.3rem;
+        font-size: 2.3em;
         padding: 2px 6px;
         background-color: rgba(0, 0, 0, 0);
         border: 0px; 
