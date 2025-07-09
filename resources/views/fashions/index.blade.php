@@ -75,7 +75,7 @@
     .favorite-btn button {
         background-color: rgba(0, 0, 0, 0);
         color: rgb(234, 234, 41);
-        font-size: 2.5rem;
+        font-size: 150%;
         font-style: initial;
         border: 0px;
         -webkit-text-stroke: 1.5px rgb(255, 255, 255);
