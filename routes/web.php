@@ -26,9 +26,5 @@ Route::group(['middleware' => ['auth']], function (){
     Route::post('/fashions/{fashion}/bookmark', [BookmarkController::class, 'store'])->name('bookmark.store');
     Route::delete('/fashions/{fashion}/unbookmark', [BookmarkController::class, 'destroy'])->name('bookmark.destroy');
     Route::get('/bookmarks', [FashionController::class, 'bookmark_fashions'])->name('bookmarks');
-    // モーダル表示のルート
-    Route::get('/fashions/{fashion}/modal', function (\App\Models\Fashion $fashion) {
-        return view('fashions.modal', compact('fashion'));
-    });
 });
 Route::get('/api/calendarevent', [FashionController::class, 'calendar_event_fetch'])->middleware('auth');

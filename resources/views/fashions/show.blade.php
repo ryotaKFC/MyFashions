@@ -35,11 +35,7 @@
     @can('update', $fashion)
     <div class="fashion-control">
         <a href="{{ route('fashions.edit', $fashion) }}">編集</a>
-        <form action="{{ route('fashions.destroy', $fashion) }}" method="post">
-            @csrf
-            @method('delete')
-            <button type="submit">削除</button>
-        </form>
+        <a href="{{ route('fashions.destroy', $fashion) }}" class="destroy_btn">削除</a>
     </div>
     @endcan
 </section>
@@ -50,8 +46,12 @@
         margin: 0 auto;
         padding: 20px;
     } */
+    .fashion-photo {
+        width: 400px;
+        margin: 40px;
+    }
     .fashion-photo img{
-        width:50%;
+        width:100%;
         height:100%;
         object-fit:cover;
         border-radius:8px;
@@ -59,6 +59,12 @@
 
     .fashion-info {
         display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 400px;
+        margin: auto;
+        justify-content: space-evenly;
+        color:rgb(65, 142, 230);
     }
     .fashion-info-item {
         color:rgb(65, 142, 230);
@@ -66,12 +72,13 @@
     }
 
     /* お気に入りボタンのスタイル */
-    .favorite-btn button{
+    .favorite-btn button {
         background-color: rgba(0, 0, 0, 0);
         color: rgb(234, 234, 41);
-        font-size: 30px;
+        font-size: 2.5rem;
+        font-style: initial;
         border: 0px;
-        -webkit-text-stroke: 1px rgb(180, 180, 180);
+        -webkit-text-stroke: 1.5px rgb(255, 255, 255);
         paint-order: stroke;
     }
 
@@ -87,5 +94,20 @@
         z-index: 2;
     }
 
+    /* 編集、削除ボタン */
+    .fashion-control {
+        margin: 5px 20px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;   
+    }
+    .fashion-control  {
+        border: none;
+        color: rgb(255, 0, 0);
+        background-color: rgba(255, 255, 255, 0);
+        border-radius:8px;
+    }
+    
 </style>
 @endsection

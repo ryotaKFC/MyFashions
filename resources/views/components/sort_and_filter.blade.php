@@ -101,8 +101,17 @@
         border-radius: 8px;
         font-weight: bold;
         transition: background-color 0.3s ease;
+
+        padding: 10px 20px;
+        background-color: #0e4a12;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
     }
     #create-button a:hover {
         background-color:#777 ; /* ホバー時の色 */
     }
+    
 </style>

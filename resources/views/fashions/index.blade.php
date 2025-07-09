@@ -39,6 +39,7 @@
 <style>
     #fashions {
         width: 80%;
+        min-width: 400px;
         margin: auto;
         display: flex;
         flex-direction: row;
@@ -54,7 +55,7 @@
 
     .fashion-item {
         margin: 20px 5px;
-        width: 300px;
+        width: 20%;
     }
 
     .fashion-info {
@@ -74,10 +75,10 @@
     .favorite-btn button {
         background-color: rgba(0, 0, 0, 0);
         color: rgb(234, 234, 41);
-        font-size: 2.5rem;
+        font-size: 150%;
         font-style: initial;
         border: 0px;
-        -webkit-text-stroke: 1.5px rgb(0, 0, 0);
+        -webkit-text-stroke: 1.5px rgb(255, 255, 255);
         paint-order: stroke;
     }
 

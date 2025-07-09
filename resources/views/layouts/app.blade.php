@@ -79,6 +79,10 @@
     a:link{
        color:#0e4a12;
     }
+    button:hover,
+    a:hover {
+        opacity: 0.8;
+    }
 
     .container {
         display: flex;
@@ -87,6 +91,12 @@
         align-content: center;
         text-align: center;
         margin: auto;
+    }
+    /* 写真のスタイル */
+    .fashion-photo img{
+        height:100%;
+        object-fit:cover;
+        border-radius:8px;
     }
 
     /* ヘッダー部 */
@@ -113,23 +123,7 @@
         color:#0e4a12 ;
     }
 
-    /* 今日の服装登録ボタン */
-    #create-button {
-        text-align: center;  /* これが親要素の中央寄せ */
-    }
-    #create-button a {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #0e4a12;
-        color: #ffffff;
-        text-decoration: none;
-        border-radius: 8px;
-        font-weight: bold;
-        transition: background-color 0.3s ease;
-    }
-    #create-button a:hover {
-        background-color:#777 ; /* ホバー時の色 */
-    }
+
 
     /* フッター */
     footer {
