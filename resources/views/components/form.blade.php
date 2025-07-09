@@ -257,7 +257,7 @@ select {
   box-shadow: 0 6px 12px rgba(100, 150, 255, 0.6);
   transform: translateY(-2px);
 }
-button, input[type="submit"] {
+.create_btn{
   background: linear-gradient(to bottom,rgb(147, 199, 241),hsl(209, 72.50%, 57.30%)); /* グラデーション青 */
   border: none;
   padding: 10px 25px;
@@ -271,7 +271,7 @@ button, input[type="submit"] {
   margin-top: 15px;
 }
 
-button:hover, input[type="submit"]:hover {
+.create_btn:hover {
   background: linear-gradient(to bottom, #4aa8ff, #007acc);
   box-shadow: 0 6px 12px rgba(100, 150, 255, 0.6);
   transform: translateY(-2px);
