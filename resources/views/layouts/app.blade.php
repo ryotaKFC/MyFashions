@@ -104,11 +104,12 @@
         height: 100px; 
         padding: 0 10px;
         border-bottom: 1px solid #ccc; 
-        background-color: #d0ffe0;
+        background-color:rgb(59, 116, 231);
         color: #ffffff;
         display: flex;
         text-align: center;
     }
+
 
     .page-header{
         text-align: center;
@@ -119,10 +120,14 @@
         color:#0e4a12;
     }
 
-    :visited{
+    /* :visited{
         color:#0e4a12 ;
+    } */
+    .site-title:visited,
+    .site-title:link
+    {
+        color:rgb(255, 255, 255);
     }
-
 
 
     /* フッター */
@@ -165,7 +170,7 @@
         padding: 20px;
     }
     #side-menu a, #side-menu button {
-        color: rgb(145, 238, 208);
+        color: rgb(65, 116, 246);
         text-decoration: none;
         background: none;
         border: none;

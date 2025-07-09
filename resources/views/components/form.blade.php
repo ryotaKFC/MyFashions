@@ -103,5 +103,179 @@ document.querySelector('select[name="season"]').value = season;
     });
 </script>
 <style>
-  
+  body {
+  background: #f0f8ff; /* アリスブルー */
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  color: #333;
+  text-align: center;
+  padding: 30px;
+}
+
+header {
+  background-color: #d0f0fd; /* 明るい水色 */
+  padding: 15px 0;
+}
+
+.site-title, h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #007acc; /* 深めの青 */
+  text-shadow: 1px 1px #fff;
+  margin: 20px 0;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+/* フォーム全体 */
+.form-list {
+  display: inline-block;
+  background-color: #e6f4ff; /* うすい水色 */
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px #a3d8ff;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+/* ラベル部分 */
+.form-list dt {
+  font-weight: bold;
+  margin-top: 15px;
+  color: #1a73e8; /* Googleブルーっぽい青 */
+}
+
+/* 入力欄 */
+.form-list dd {
+  margin-bottom: 10px;
+}
+
+input[type="file"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 6px 12px;
+  border-radius: 10px;
+  border: 1px solid #bbb;
+  background: #fff;
+  font-size: 1em;
+  box-sizing: border-box;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+/* 画像プレビュー */
+#preview {
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px #7bbfff;
+}
+
+/* ボタンまわり */
+.form-buttons {
+  text-align: right;
+  margin-top: 25px;
+  padding-right: 10px;
+}
+
+.form-buttons input[type="submit"] {
+  background-color: #4aa8ff;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-buttons input[type="submit"]:hover {
+  background-color: #007acc;
+}
+
+.form-buttons a {
+  margin-left: 15px;
+  color: #007acc;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.form-buttons a:hover {
+  text-decoration: underline;
+}
+.form-buttons input[type="submit"] {
+  background: linear-gradient(to bottom, #a8d8ff, #4aa8ff); /* グラデ青 */
+  border: none;
+  padding: 10px 25px;
+  color: white;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 4px 6px rgba(100, 150, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.form-buttons input[type="submit"]:hover {
+  background: linear-gradient(to bottom, #4aa8ff, #007acc);
+  box-shadow: 0 6px 12px rgba(100, 150, 255, 0.6);
+  transform: translateY(-2px);
+}
+.form-buttons a {
+  margin-left: 15px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background-color: #e0f0ff;
+  color: #007acc;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.form-buttons a:hover {
+  background-color: #c0e0ff;
+}
+.form-buttons {
+  text-align: right;
+  margin-top: 25px;
+  padding-right: 10px;
+}
+
+.form-buttons input[type="submit"] {
+  background: linear-gradient(to bottom, #a8d8ff, #4aa8ff);
+  border: none;
+  padding: 10px 25px;
+  color: white;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 4px 6px rgba(100, 150, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.form-buttons input[type="submit"]:hover {
+  background: linear-gradient(to bottom, #4aa8ff, #007acc);
+  box-shadow: 0 6px 12px rgba(100, 150, 255, 0.6);
+  transform: translateY(-2px);
+}
+button, input[type="submit"] {
+  background: linear-gradient(to bottom,rgb(147, 199, 241),hsl(209, 72.50%, 57.30%)); /* グラデーション青 */
+  border: none;
+  padding: 10px 25px;
+  color: white;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 4px 6px rgba(100, 150, 255, 0.4);
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+button:hover, input[type="submit"]:hover {
+  background: linear-gradient(to bottom, #4aa8ff, #007acc);
+  box-shadow: 0 6px 12px rgba(100, 150, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+
 </style>
