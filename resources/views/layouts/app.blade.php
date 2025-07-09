@@ -114,6 +114,7 @@
     .page-header{
         text-align: center;
         color:#0e4a12;
+        
     }
     .your-name{
         text-align: center;
@@ -126,6 +127,7 @@
     .site-title:visited,
     .site-title:link
     {
+        text-decoration: none;
         color:rgb(255, 255, 255);
     }
 
