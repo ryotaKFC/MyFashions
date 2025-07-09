@@ -21,7 +21,7 @@
                         <li><a href="{{ route('bookmarks') }}" class="english">FAVORITE</a></li>
                         <form onsubmit="return confirm('ログアウトしますか？')" action="{{ route('logout') }}" method="post">
                             @csrf
-                            <button type="submit" id="logout-btn">LOGOUT</button>
+                            <button type="submit" id="logout-btn">ログアウト</button>
                         </form>
                     @else
                         <li><a href="{{ route('login') }}">ログイン</a></li>
@@ -143,9 +143,10 @@
     /* ハンバーガーメニュー */
     #menu-btn {
         font-size: 2.3em;
+        max-width: 40px;
         background-color: rgba(0, 0, 0, 0);
         border: 0px; 
-        border-radius: 1px;       
+        border-radius: 1px;
         cursor: pointer;
         color: rgb(255, 255, 255);
     }
