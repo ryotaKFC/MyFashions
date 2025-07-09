@@ -27,7 +27,7 @@
     <div class="fashion-info">
         <div class="fashion-info-item">#{{ $fashion->season }}</div>
         <div class="fashion-info-item">#{{ $fashion->weather }}</div>
-        <div class="fashion-info-item">#気温{{ $fashion->temperature }}℃</div>
+        <div class="fashion-info-item">#{{ $fashion->temperature }}℃</div>
         <div class="fashion-info-item">#湿度{{ $fashion->humidity }}%</div>
         <div class="fashion-info-item">#{{ $fashion->luck }}</div>
         <div class="fashion-info-item">#{{ $fashion->comment }}</div>
@@ -42,24 +42,36 @@
 
 
 <style>
-    /* .fashion-photo {
-        text-align: center;
-    } */
+    .fashion-photo img {
+        /* width: 20rem; */ 
+        width: 300px;
+    }
+
+    .fashion-item {
+        margin: 20px auto;
+    }
+
     .fashion-info {
         display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 200px;
+        margin: auto;
+        justify-content: space-evenly;
+        color:rgb(65, 142, 230);
     }
     .fashion-info-item {
-        color:rgb(65, 142, 230);
-        margin: 0px 3px;
+        margin: 1px 3px;
     }
 
     /* お気に入りボタンのスタイル */
     .favorite-btn button {
         background-color: rgba(0, 0, 0, 0);
         color: rgb(234, 234, 41);
-        font-size: 25px;
+        font-size: 2.5rem;
+        font-style: initial;
         border: 0px;
-        -webkit-text-stroke: 1px rgb(180, 180, 180);
+        -webkit-text-stroke: 1.5px rgb(0, 0, 0);
         paint-order: stroke;
     }
 
