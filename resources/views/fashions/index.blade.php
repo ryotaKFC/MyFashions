@@ -39,6 +39,7 @@
 <style>
     #fashions {
         width: 80%;
+        min-width: 400px;
         margin: auto;
         display: flex;
         flex-direction: row;
@@ -54,7 +55,7 @@
 
     .fashion-item {
         margin: 20px 5px;
-        width: 300px;
+        width: 20%;
     }
 
     .fashion-info {

@@ -48,7 +48,6 @@
 
 <style>
     .fashion-photo img {
-        /* width: 20rem; */ 
         width: 300px;
     }
 

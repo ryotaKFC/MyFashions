@@ -50,8 +50,12 @@
         margin: 0 auto;
         padding: 20px;
     } */
+    .fashion-photo {
+        /* width: 500px; */
+        margin: 40px;
+    }
     .fashion-photo img{
-        width:50%;
+        width:100%;
         height:100%;
         object-fit:cover;
         border-radius:8px;
@@ -66,12 +70,13 @@
     }
 
     /* お気に入りボタンのスタイル */
-    .favorite-btn button{
+    .favorite-btn button {
         background-color: rgba(0, 0, 0, 0);
         color: rgb(234, 234, 41);
-        font-size: 30px;
+        font-size: 2.5rem;
+        font-style: initial;
         border: 0px;
-        -webkit-text-stroke: 1px rgb(180, 180, 180);
+        -webkit-text-stroke: 1.5px rgb(255, 255, 255);
         paint-order: stroke;
     }
 

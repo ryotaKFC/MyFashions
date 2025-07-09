@@ -79,6 +79,10 @@
     a:link{
        color:#0e4a12;
     }
+    button:hover,
+    a:hover {
+        opacity: 0.8;
+    }
 
     .container {
         display: flex;
@@ -87,6 +91,11 @@
         align-content: center;
         text-align: center;
         margin: auto;
+    }
+    /* 写真のスタイル */
+    .fashion-photo img{
+        object-fit:cover;
+        border-radius:8px;
     }
 
     /* ヘッダー部 */
