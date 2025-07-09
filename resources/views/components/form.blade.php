@@ -23,11 +23,11 @@
     </dd>
     <dt>温度</dt>
     <dd>
-      <input type="number" name="temperature" value="{{ old('temperature') }}" min="-20" max="50" step="5"> ℃
+      <input type="number" name="temperature" value="{{ old('temperature') }}"min="-20" max="50" step="1"> ℃
     </dd>
     <dt>湿度</dt>
     <dd>
-      <input type="number" name="humidity" value="{{ old('humidity') }}" min="0" max="100" step="10"> %
+      <input type="number" name="humidity" value="{{ old('humidity') }}" min="0" max="100" step="1"> %
     </dd>
 </dl>
 
@@ -69,7 +69,7 @@ document.querySelector('select[name="season"]').value = season;
             .then(response => response.json())
             .then(data => {
                 const current = data.current;
-                const temperature = current.temperature_2m;
+                const temperature = Math.round(current.temperature_2m);
                 const humidity = current.relative_humidity_2m;
                 const weatherCode = current.weather_code;
 
