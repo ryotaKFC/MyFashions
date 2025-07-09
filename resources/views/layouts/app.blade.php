@@ -67,14 +67,14 @@
 </script>
 <style>
     /* 日本語フォント */
-    @import url('https://fonts.googleapis.com/css2?family=Itim&family=Zen+Maru+Gothic&display=swap');
+    /* @import url('https://fonts.googleapis.com/css2?family=Itim&family=Zen+Maru+Gothic&display=swap'); */
     /* 英語フォント */
-    @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+    /* @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap'); */
 
     /* サイト全体設定 */
     body{
         margin: 0;
-        font-family: 'Itim', 'Zen Maru Gothic', sans-serif;
+        font-family: 'Georgia', serif;
     }
     a:link{
        color:#0e4a12;
@@ -147,6 +147,7 @@
         border: 0px; 
         border-radius: 1px;       
         cursor: pointer;
+        color: rgb(255, 255, 255);
     }
     .header-left {
         font-size: 2rem;
