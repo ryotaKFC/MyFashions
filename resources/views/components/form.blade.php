@@ -103,5 +103,150 @@ document.querySelector('select[name="season"]').value = season;
     });
 </script>
 <style>
-  
+  body {
+  background: #fffafc;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  color: #333;
+  text-align: center;
+  padding: 30px;
+}
+
+h1, .site-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #ff69b4;
+  text-shadow: 1px 1px #fff;
+  margin-bottom: 20px;
+}
+
+.form-list {
+  display: inline-block;
+  background-color: #ffeef4;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px #f4d6de;
+  text-align: left;
+}
+
+.form-list dt {
+  font-weight: bold;
+  margin-top: 15px;
+  color: #d63384;
+}
+
+.form-list dd {
+  margin-bottom: 10px;
+}
+
+input[type="file"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 6px 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+button, input[type="submit"] {
+  background-color: #ffb6c1;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+}
+button:hover, input[type="submit"]:hover {
+  background-color: #ff69b4;
+}
+
+a {
+  color: #d63384;
+  font-weight: bold;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+#preview {
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px #d63384;
+}
+.site-title, h1 {
+  font-size: 2rem; /* ←ここを調整、もとの2.5remより小さく */
+  font-weight: 700;
+  color: #ff69b4;
+  text-shadow: 1px 1px #fff;
+  margin: 20px 0;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+header {
+  background-color: #d8f3dc;
+  padding: 15px 0;
+}
+<p style="font-size: 1rem; color: #888;">今日はどんなコーデにしよう？🌸</p>
+.form-list dd input[type="file"] {
+  margin-top: 5px;
+  margin-bottom: 15px; /* ← 写真とその次の要素に余白 */
+}
+
+input[type="submit"], button {
+  margin-top: 20px;  /* 登録ボタンの上に余白 */
+}
+.form-list {
+  margin-bottom: 40px; /* 下に余白を追加して、画面にくっつきすぎないように */
+}
+/* 写真入力の余白を調整 */
+input[type="file"] {
+  margin-top: 10px;
+  margin-bottom: 20px;  /* 写真と季節の間に余白を追加 */
+  display: block;
+}
+
+/* 登録ボタンの余白を調整 */
+input[type="submit"], button[type="submit"] {
+  margin-top: 25px;   /* 上に余白 */
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+/* フォーム全体の下にもスペースを */
+.form-list {
+  margin-bottom: 40px;
+}
+.form-buttons {
+  text-align: right;
+  margin-top: 20px;
+  padding-right: 10px;
+}
+
+.form-buttons input[type="submit"] {
+  background-color: #ffb6c1;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-buttons input[type="submit"]:hover {
+  background-color: #ff69b4;
+}
+
+.form-buttons a {
+  margin-left: 15px;
+  color: #006400;
+  font-weight: bold;
+  text-decoration: none;
+}
+
 </style>
