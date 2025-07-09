@@ -34,7 +34,7 @@
 
     @can('update', $fashion)
     <div class="fashion-control">
-        <a href="{{ route('fashions.edit', $fashion) }}">編集</a>
+        <a href="{{ route('fashions.edit', $fashion) }}" class="edit_btn">編集</a>
         <a href="{{ route('fashions.destroy', $fashion) }}" class="destroy_btn">削除</a>
     </div>
     @endcan
@@ -102,11 +102,14 @@
         flex-wrap: wrap;
         justify-content: center;   
     }
-    .fashion-control  {
-        border: none;
+
+    .fashion-control a {
+        text-decoration: none;  
+        margin: 0 10px;
+    }
+    .destroy_btn:link,
+    .destroy_btn:visited {
         color: rgb(255, 0, 0);
-        background-color: rgba(255, 255, 255, 0);
-        border-radius:8px;
     }
     
 </style>
