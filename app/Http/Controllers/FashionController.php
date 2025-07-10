@@ -33,7 +33,7 @@ class FashionController extends Controller
         if ($filter && $filter_value) {
             $query->where($filter, $filter_value);
         }
-        $fashions = $query->orderBy($sort, $direction);
+        $fashions = $query->orderBy($sort, $direction)->get();
 
         // return view('fashions.index', compact('fashions', 'sort', 'direction'));
         return view('fashions.index', [
@@ -196,7 +196,7 @@ class FashionController extends Controller
         if ($filter && $filter_value) {
             $query->where($filter, $filter_value);
         }
-        $fashions = $query->orderBy($sort, $direction);
+        $fashions = $query->orderBy($sort, $direction)->get();
 
         return view('fashions.bookmarks', [
             'fashions' => $fashions,
@@ -248,6 +248,16 @@ class FashionController extends Controller
         $comment = [
             '服好きと繋がりたい',
             'テスト',
+            'デート服',
+            'カフェ巡り',
+            'ChatGPT',
+            'vacation',
+            'にっこり',
+            'えんじょい',
+            '遠出',
+            '日帰り',
+            'ドラゴンボール',
+            'すごろく',
         ];
         return $comment[rand(0, count($comment) - 1)];
     }
