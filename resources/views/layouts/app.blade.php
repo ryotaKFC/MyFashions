@@ -166,6 +166,7 @@
         cursor: pointer;
         color: rgb(255, 255, 255);
         margin: auto 0;
+        padding: 0;
     }
     .header-left {
         font-size: 2rem;
