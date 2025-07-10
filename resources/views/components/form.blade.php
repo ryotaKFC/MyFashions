@@ -26,7 +26,7 @@
       <select name="temperature">
         <option value="">選択してください</option>
         <option value="-1" {{ old('temperature') == -1 ? 'selected' : '' }}>0℃以下</option>
-        <option value="5" {{ old('temperature') == 5 ? 'selected' : '' }}>5℃</option>
+        <option value="5"  {{ old('temperature') == 5  ? 'selected' : '' }}>5℃</option>
         <option value="10" {{ old('temperature') == 10 ? 'selected' : '' }}>10℃</option>
         <option value="15" {{ old('temperature') == 15 ? 'selected' : '' }}>15℃</option>
         <option value="20" {{ old('temperature') == 20 ? 'selected' : '' }}>20℃</option>
@@ -34,7 +34,6 @@
         <option value="30" {{ old('temperature') == 30 ? 'selected' : '' }}>30℃</option>
         <option value="35" {{ old('temperature') == 35 ? 'selected' : '' }}>35℃以上</option>
       </select>
-      <!-- <input type="number" name="temperature" value="{{ old('temperature') }}"min="-20" max="50" step="1"> ℃ -->
     </dd>
     <dt>湿度</dt>
     <dd>
@@ -46,11 +45,10 @@
         <option value="70" {{ old('humidity') == 70 ? 'selected' : '' }}>70%</option>
         <option value="90" {{ old('humidity') == 90 ? 'selected' : '' }}>90%</option>
       </select>
-      <!-- <input type="number" name="humidity" value="{{ old('humidity') }}" min="0" max="100" step="1"> % -->
     </dd>
     <dt>日付</dt>
     <dd>
-      <input type="date" class="created_at" value="{{ old('created_at') ?: \Carbon\Carbon::today()->format('Y-m-d') }}" />
+      <input type="date" class="created_at" value="{{ old('created_at') ?: \Carbon\Carbon::today()->format('Y-m-d') }}">
     </dd>
 </dl>
 
@@ -126,28 +124,6 @@
 //     });
 </script>
 <style>
-/* 基本スタイル */
-body {
-  background: #f0f8ff; /* アリスブルー */
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-  color: #333;
-  text-align: center;
-  padding: 30px;
-}
-
-header {
-  background-color: #d0f0fd;
-  padding: 15px 0;
-}
-
-.site-title, h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #007acc;
-  text-shadow: 1px 1px #fff;
-  margin: 20px 0;
-}
-
 /* フォーム全体 */
 .form-list {
   display: inline-block;
