@@ -38,7 +38,7 @@
             <a class="fashion-info-item" href="{{ route('fashions.index', ['filter' => 'luck', 'filter_value' => $fashion->luck]) }}">#{{ $fashion->luck }}</a>
             <a class="fashion-info-item" href="{{ route('fashions.index', ['filter' => 'comment', 'filter_value' => $fashion->comment]) }}">#{{ $fashion->comment }}</a>
         </div>
-        <div class="fashion-info-created_at">{{ $fashion->created_at }}</div>
+        <div class="fashion-info-created_at">{{ $fashion->created_at->format('Y-m-d') }}</div>
     </fashion>
     @endif
     @endforeach
