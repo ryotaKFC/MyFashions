@@ -9,7 +9,7 @@
 <!-- カレンダー -->
 @include('components.calendar')
 <!-- コーデ登録ボタン -->
-<p id="create-button"><a href="{{ route('fashions.create') }}">今日のコーデ登録</a></p>
+<div id="create-button"><a href="{{ route('fashions.create') }}">今日のコーデ登録</a></div>
  <!-- モーダル表示（テスト） -->
 @include('components.modal')
 
@@ -17,6 +17,7 @@
 <style>
     /* 今日の服装登録ボタン */
     #create-button {
+        margin: 30px;
         text-align: center;  /* これが親要素の中央寄せ */
     }
     #create-button a {

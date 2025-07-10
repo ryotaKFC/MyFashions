@@ -8,7 +8,7 @@
     <!-- <link rel="stylesheet" href="/css/app.css"> -->
 </head>
 <body>
-    <header>
+    <header class="theme-primary-color">
         <!-- ハンバーガーメニュー -->
         <div class="header-left">
             <button id="menu-btn">≡</button>
@@ -16,9 +16,9 @@
             <nav id="side-menu">
                 <ul>
                     @if (Auth::check())
-                        <li><a href="{{ route('home') }}" class="english">HOME</a></li>
-                        <li><a href="{{ route('fashions.index') }}" class="english">ALL</a></li>
-                        <li><a href="{{ route('bookmarks') }}" class="english">FAVORITE</a></li>
+                        <li><a href="{{ route('home') }}">HOME</a></li>
+                        <li><a href="{{ route('fashions.index') }}">ALL</a></li>
+                        <li><a href="{{ route('bookmarks') }}">FAVORITE</a></li>
                         <form onsubmit="return confirm('ログアウトしますか？')" action="{{ route('logout') }}" method="post">
                             @csrf
                             <button type="submit" id="logout-btn">ログアウト</button>
@@ -32,7 +32,7 @@
         </div>
         <!-- サイトのタイトル -->
         <div class="header-center">
-            <h1><a href="{{ route('home') }}" class="site-title english">MyFashion</a></h1>
+            <h1><a href="{{ route('home') }}" class="site-title font-georgia">MyFashion</a></h1>
          </div>
 
     </header>
@@ -57,7 +57,6 @@
             sideMenu.classList.toggle('open');
         });
 
-        // 背景クリックで閉じる場合など追加したければこちら
         document.addEventListener('click', function (e) {
             if (!sideMenu.contains(e.target) && e.target !== menuBtn) {
                 sideMenu.classList.remove('open');
@@ -71,11 +70,29 @@
     /* 英語フォント */
     /* @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap'); */
 
+    /* サイトのテーマカラー */
+
+        /* 背景色 */
+        body {
+            /* アリスブルー */
+            background-color: #f0f8ff; 
+        }
+        /* カレンダーの背景 */
+        .fc-scrollgrid-sync-table {
+            background-color:rgb(255, 255, 255);
+        }
+        /* メインのカラー */
+        .theme-primary-color {
+            background-color:rgb(18, 39, 83);
+        }
+        /* セカンダリカラー */
+
+
     /* サイト全体設定 */
     body{
         margin: 0;
     }
-    .english {
+    .font-georgia {
         font-family: 'Georgia', serif;
     }
     a:link{
@@ -106,7 +123,7 @@
         height: 100px; 
         padding: 0 10px;
         border-bottom: 1px solid #ccc; 
-        background-color:rgb(59, 116, 231);
+        /* background-color:rgb(59, 116, 231); */
         color: #ffffff;
         display: flex;
         text-align: center;
@@ -142,8 +159,7 @@
 
     /* ハンバーガーメニュー */
     #menu-btn {
-        font-size: 2.3em;
-        max-width: 40px;
+        font-size: 2em;
         background-color: rgba(0, 0, 0, 0);
         border: 0px; 
         border-radius: 1px;
