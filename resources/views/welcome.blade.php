@@ -3,8 +3,8 @@
 <div class="welcome">
     <h1>My Fashion</h1>
     @auth
-    <a class="btn" href="{{ route('home') }}">マイページ</a>
-    <a class="btn" href="{{ route('fashions.index') }}">ブログを見る</a>
+    <a class="btn" href="{{ route('home') }}">ホームへ</a>
+    <a class="btn" href="{{ route('fashions.index') }}">コーデを見る</a>
     @else
     <a class="btn primary-color" href="{{ route('register') }}">会員登録</a>
     <a class="btn primary-color" href="{{ route('login') }}">ログイン</a>
@@ -25,7 +25,9 @@ a {
 }
 
 /* ボタンの見た目 */
-.btn a {
+.btn:visited,
+.btn:link
+ {
   display: inline-block;
   border: none;
   background-color: #191970; /* ミッドナイトブルー */
@@ -42,9 +44,6 @@ a {
   background-color: #4169e1; /* ロイヤルブルー */
 }
 
-a{
-    all:unset;
-}
  .btn{
   margin: 30px;
   color:#fff;

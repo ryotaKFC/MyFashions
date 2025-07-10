@@ -39,22 +39,30 @@
         const filterSelect = document.getElementById('filter');
         const valueSelect = document.getElementById('filter_value');
 
-        const targetValues = {
+        const targetValuesName = {
             season: ['春', '夏', '秋', '冬'],
             weather: ['晴れ', '曇り', '雨', '雪'],
             temperature: ['0℃以下','5℃', '10℃', '15℃', '20℃', '25℃', '30℃', '35℃以上'],
             humidity: ['10%', '30%', '50%', '70%', '90%'],
             luck: ['大吉','スーパー吉','超吉','神吉','Nice吉'],
-            comment: ['服好きと繋がりたい','テスト']
+            comment: ['服好きと繋がりたい','テスト','デート服','カフェ巡り','ChatGPT','vacation','にっこり','えんじょい','遠出','日帰り','ドラゴンボール','すごろく',]
+        };
+        const targetValues = {
+            season: ['春', '夏', '秋', '冬'],
+            weather: ['晴れ', '曇り', '雨', '雪'],
+            temperature: ['-1','5', '10', '15', '20', '25', '30', '35'],
+            humidity: ['10', '30', '50', '70', '90'],
+            luck: ['大吉','スーパー吉','超吉','神吉','Nice吉'],
+            comment: ['服好きと繋がりたい','テスト','デート服','カフェ巡り','ChatGPT','vacation','にっこり','えんじょい','遠出','日帰り','ドラゴンボール','すごろく',]
         };
 
         function updateFilterOptions(selectedFilter, selectedValue = '') {
             valueSelect.innerHTML = '';
-            if (targetValues[selectedFilter]) {
-                targetValues[selectedFilter].forEach(function (val) {
+            if (targetValues[selectedFilter] && targetValuesName[selectedFilter]) {
+                targetValues[selectedFilter].forEach(function (val, index) {
                     const option = document.createElement('option');
                     option.value = val;
-                    option.textContent = val;
+                    option.textContent = targetValuesName[selectedFilter][index];
                     if (val === selectedValue) {
                         option.selected = true;
                     }

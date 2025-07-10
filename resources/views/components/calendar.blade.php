@@ -22,4 +22,7 @@
 </script>
 
 <style>
+    #fc-dom-1 {
+        font-size: 100%;
+    }
 </style>

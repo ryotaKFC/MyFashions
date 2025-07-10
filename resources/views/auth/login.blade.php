@@ -32,7 +32,7 @@
     background-color: #e6f4ff;
     padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 0 10px #a3d8ff;
+    /* box-shadow: 0 0 10px #a3d8ff; */
     text-align: left;
     margin-bottom: 40px;
     }

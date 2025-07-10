@@ -2,7 +2,7 @@
 @section('content')
 
 <section class="page-header">
-    <h1>ホーム画面</h1>
+    <h1>ホーム</h1>
 </section>
 <p class="your-name">ようこそ、{{ Auth::user()->name }}さん</p>
 
