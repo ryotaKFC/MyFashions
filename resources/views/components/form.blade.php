@@ -48,7 +48,7 @@
     </dd>
     <dt>日付</dt>
     <dd>
-      <input type="date" class="created_at" value="{{ old('created_at') ?: \Carbon\Carbon::today()->format('Y-m-d') }}">
+      <input type="date" name="created_at" value="{{ old('created_at') ?: \Carbon\Carbon::today()->format('Y-m-d') }}">
     </dd>
 </dl>
 
