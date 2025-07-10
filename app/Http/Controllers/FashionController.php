@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Fashion;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
@@ -76,7 +77,7 @@ class FashionController extends Controller
         }
         $fashion = new Fashion();
         $fashion->timestamps = false; // 明示的に自動更新を止める
-        $fashion->created_at = $request->created_at;
+        $fashion->created_at = Carbon::parse($request->created_at);
         $fashion->user_id = auth()->id();
         $fashion->season = $request->season;
         $fashion->weather = $request->weather;
