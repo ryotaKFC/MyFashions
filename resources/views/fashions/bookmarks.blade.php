@@ -31,12 +31,12 @@
             </a>
         </div>
         <div class="fashion-info">
-            <div class="fashion-info-item">#{{ $fashion->season }}</div>
-            <div class="fashion-info-item">#{{ $fashion->weather }}</div>
-            <div class="fashion-info-item">#{{ $fashion->temperature }}℃</div>
-            <div class="fashion-info-item">#湿度{{ $fashion->humidity }}%</div>
-            <div class="fashion-info-item">#{{ $fashion->luck }}</div>
-            <div class="fashion-info-item">#{{ $fashion->comment }}</div>
+            <a class="fashion-info-item" href="{{ route('fashions.index', ['filter' => 'season', 'filter_value' => $fashion->season]) }}">#{{ $fashion->season }}</a>
+            <a class="fashion-info-item" href="{{ route('fashions.index', ['filter' => 'weather', 'filter_value' => $fashion->weather]) }}">#{{ $fashion->weather }}</a>
+            <a class="fashion-info-item" href="{{ route('fashions.index', ['filter' => 'temperature', 'filter_value' => $fashion->temperature]) }}">#{{ $fashion->temperature }}℃</a>
+            <a class="fashion-info-item" href="{{ route('fashions.index', ['filter' => 'humidity', 'filter_value' => $fashion->humidity]) }}">#{{ $fashion->humidity }}%</a>
+            <a class="fashion-info-item" href="{{ route('fashions.index', ['filter' => 'luck', 'filter_value' => $fashion->luck]) }}">#{{ $fashion->luck }}</a>
+            <a class="fashion-info-item" href="{{ route('fashions.index', ['filter' => 'comment', 'filter_value' => $fashion->comment]) }}">#{{ $fashion->comment }}</a>
         </div>
         <div class="fashion-info-created_at">{{ $fashion->created_at }}</div>
     </fashion>
@@ -70,9 +70,12 @@
         width: 200px;
         margin: auto;
         justify-content: space-evenly;
-        color:rgb(65, 142, 230);
     }
-    .fashion-info-item {
+    .fashion-info-item,
+    .fashion-info-item:link,
+    .fashion-info-item:visited {
+        color:rgb(65, 142, 230);
+        text-decoration: none;
         margin: 1px 3px;
     }
 
