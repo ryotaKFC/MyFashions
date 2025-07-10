@@ -122,31 +122,6 @@
 //     });
 </script>
 <style>
-  body {
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-  color: #333;
-  text-align: center;
-  padding: 30px;
-}
-
-header {
-  background-color: #d0f0fd; /* 明るい水色 */
-  padding: 15px 0;
-}
-
-.accept-button {
-
-}
-
-.site-title, h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #007acc; 深めの青
-  text-shadow: 1px 1px #fff;
-  margin: 20px 0;
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-}
-
 /* フォーム全体 */
 .form-list {
   display: inline-block;
@@ -186,6 +161,7 @@ select {
 
 /* 画像プレビュー */
 #preview {
+  margin: auto;
   margin-bottom: 20px;
   border-radius: 10px;
   box-shadow: 0 0 8px #7bbfff;
@@ -275,25 +251,6 @@ select {
 }
 
 .form-buttons input[type="submit"]:hover {
-  background: linear-gradient(to bottom, #4aa8ff, #007acc);
-  box-shadow: 0 6px 12px rgba(100, 150, 255, 0.6);
-  transform: translateY(-2px);
-}
-.create_btn{
-  background: linear-gradient(to bottom,rgb(147, 199, 241),hsl(209, 72.50%, 57.30%)); /* グラデーション青 */
-  border: none;
-  padding: 10px 25px;
-  color: white;
-  font-weight: bold;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 1rem;
-  box-shadow: 0 4px 6px rgba(100, 150, 255, 0.4);
-  transition: all 0.3s ease;
-  margin-top: 15px;
-}
-
-.create_btn:hover {
   background: linear-gradient(to bottom, #4aa8ff, #007acc);
   box-shadow: 0 6px 12px rgba(100, 150, 255, 0.6);
   transform: translateY(-2px);
