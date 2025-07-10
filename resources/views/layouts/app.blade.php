@@ -8,7 +8,7 @@
     <!-- <link rel="stylesheet" href="/css/app.css"> -->
 </head>
 <body>
-    <header class="theme-primary-color">
+    <header class="primary-color">
         <!-- ハンバーガーメニュー -->
         <div class="header-left">
             <button id="menu-btn">≡</button>
@@ -82,7 +82,7 @@
             background-color:rgb(255, 255, 255);
         }
         /* メインのカラー */
-        .theme-primary-color {
+        .primary-color {
             background-color:rgb(18, 39, 83);
         }
         /* セカンダリカラー */
@@ -188,7 +188,7 @@
         padding: 20px;
     }
     #side-menu a, #side-menu button {
-        color: rgb(65, 116, 246);
+        color: rgb(255, 255, 255);
         text-decoration: none;
         background: none;
         border: none;
