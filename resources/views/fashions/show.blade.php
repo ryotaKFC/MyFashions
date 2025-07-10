@@ -30,22 +30,16 @@
         <div class="fashion-info-item">#{{ $fashion->comment }}</div>
     </div>
     <div class="fashion-info-created_at">{{ $fashion->created_at }}</div>
-    <!-- <div class="fashion-body">{!! nl2br(e($fashion->body)) !!}</div> -->
 
     @can('update', $fashion)
     <div class="fashion-control">
-        <a href="{{ route('fashions.edit', $fashion) }}" class="edit_btn">編集</a>
+        <a href="{{ route('fashions.edit', parameters: $fashion) }}" class="edit_btn">編集</a>
         <a href="{{ route('fashions.destroy', $fashion) }}" class="destroy_btn">削除</a>
     </div>
     @endcan
 </section>
 
 <style>
-    /* .fashion-detail {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-    } */
     .fashion-photo {
         width: 400px;
         margin: 40px;
