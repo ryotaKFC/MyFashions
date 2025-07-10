@@ -114,8 +114,6 @@ a:hover {
   font-weight: bold;
   transition: background-color 0.3s ease;
 }
-
-
 #create-button a:hover {
   background-color:#777 ; /* ホバー時の色 */
 }
@@ -127,10 +125,6 @@ a:hover {
   text-align: center;
   color:#000000;
 }
-
-
-
-
 footer {
     padding: 30px;
     text-align: center;
