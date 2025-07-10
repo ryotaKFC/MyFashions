@@ -32,19 +32,41 @@
     <div class="fashion-info-created_at">{{ $fashion->created_at->format('Y-m-d') }}</div>
 
     <div class="fashion-control">
-        <form action="{{ route('fashions.edit', parameters: $fashion) }}" method="get">
+        <form action="{{ route('fashions.edit', $fashion) }}" method="get">
             @csrf    
             <button class="edit-btn">✏️編集</button>
         </form>
         <form action="{{ route('fashions.destroy', $fashion) }}" method="post">
             @csrf
             @method('delete')
-            <button class="destroy_btn">🗑️削除</button>
+            <button class="destroy-btn">🗑️削除</button>
         </form>
     </div>
 </section>
 
 <style>
+    /* 今日の服装登録ボタン */
+    .fashion-control button{
+        margin: 30px;
+        text-align: center;
+        border-radius: 8px;
+    }
+    .fashion-control button {
+        display: inline-block;
+        padding: 10px 20px;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+        border: none;
+    }
+
+    /* #create-button a:hover {
+        background-color:#777 ;
+    } */
+
+
     .fashion-photo {
         width: 400px;
         margin: 40px;
@@ -64,7 +86,6 @@
         margin: auto;
         justify-content: space-evenly;
     }
-    /* .fashion-info-item, */
     .fashion-info-item:link,
     .fashion-info-item:visited {
         color:rgb(65, 142, 230);
@@ -107,13 +128,15 @@
 
     .fashion-control button {
         color: transparent;
-        text-shadow: 0 0 0 black;
         text-decoration: none;  
         margin: 0 10px;
+        cursor : pointer;
     }
-    .destroy_btn:link,
-    .destroy_btn:visited {
-        color: rgb(255, 0, 0);
+    .edit-btn{
+        text-shadow: 0 0 0 black;
+    }
+    .destroy-btn {
+        text-shadow: 0 0 0 red;
     }
     
 </style>
