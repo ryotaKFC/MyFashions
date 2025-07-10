@@ -25,7 +25,7 @@
     <dd>
       <select name="temperature">
         <option value="">選択してください</option>
-        <option value="0" {{ old('temperature') == 0 ? 'selected' : '' }}>0℃以下</option>
+        <option value="-1" {{ old('temperature') == -1 ? 'selected' : '' }}>0℃以下</option>
         <option value="5" {{ old('temperature') == 5 ? 'selected' : '' }}>5℃</option>
         <option value="10" {{ old('temperature') == 10 ? 'selected' : '' }}>10℃</option>
         <option value="15" {{ old('temperature') == 15 ? 'selected' : '' }}>15℃</option>
@@ -47,6 +47,10 @@
         <option value="90" {{ old('humidity') == 90 ? 'selected' : '' }}>90%</option>
       </select>
       <!-- <input type="number" name="humidity" value="{{ old('humidity') }}" min="0" max="100" step="1"> % -->
+    </dd>
+    <dt>日付</dt>
+    <dd>
+      <input type="date" class="created_at" value="{{ old('created_at') ?: \Carbon\Carbon::today()->format('Y-m-d') }}" />
     </dd>
 </dl>
 
