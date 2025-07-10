@@ -165,6 +165,7 @@
         border-radius: 1px;
         cursor: pointer;
         color: rgb(255, 255, 255);
+        margin: auto 0;
     }
     .header-left {
         font-size: 2rem;
