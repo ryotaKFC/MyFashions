@@ -186,8 +186,8 @@ select {
 }
 
 .form-buttons input[type="submit"]:hover {
-  background-color: #007acc;
-}
+  background-color: #07acc;
+}0
 
 .form-buttons a {
   margin-left: 15px;

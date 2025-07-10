@@ -38,7 +38,7 @@
 
 <style>
     #fashions {
-        width: 80%;
+        width: 800px;
         min-width: 400px;
         margin: auto;
         display: flex;

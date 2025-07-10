@@ -29,7 +29,7 @@
         <select name="filter_value" id="filter_value"></select>
     </div>
     <div class="sort-filter">
-        <button type="submit">検索</button>
+        <button type="submit" class="primary-color">検索</button>
     </div>
 </form>
 
@@ -95,15 +95,8 @@
     }
     /* 検索ボタンのスタイル */
     .sort-filter button {
-        background-color: #0e4a12;
-        color: #ffffff;
-        text-decoration: none;
-        border-radius: 8px;
-        font-weight: bold;
-        transition: background-color 0.3s ease;
-
         padding: 10px 20px;
-        background-color: #0e4a12;
+        /* background-color: #0e4a12; */
         color: #ffffff;
         text-decoration: none;
         border-radius: 8px;
@@ -111,7 +104,7 @@
         transition: background-color 0.3s ease;
     }
     #create-button a:hover {
-        background-color:#777 ; /* ホバー時の色 */
+        /* background-color:#777 ; ホバー時の色 */
     }
     
 </style>

@@ -10,7 +10,11 @@
         <dt>パスワード</dt>
         <dd><input type="password" name="password"></dd>
     </dl>
-    <button type="submit">ログイン</button>
+    <button type="submit" class="form-buttons">ログイン</button>
     <a href="/">キャンセル</a>
 </form>
 @endsection()
+
+<style>
+    
+</style>
