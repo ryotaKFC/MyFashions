@@ -75,6 +75,8 @@ class FashionController extends Controller
             $this->validate($request, ['photo_path' => 'required',]);
         }
         $fashion = new Fashion();
+        $fashion->timestamps = false; // 明示的に自動更新を止める
+        $fashion->created_at = $request->created_at;
         $fashion->user_id = auth()->id();
         $fashion->season = $request->season;
         $fashion->weather = $request->weather;
