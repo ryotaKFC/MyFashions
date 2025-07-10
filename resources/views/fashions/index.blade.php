@@ -16,7 +16,7 @@
                     @csrf
                     <button>☆</button>
                 </form>
-                @else 
+                @else
                 <form action="{{ route('bookmark.destroy', $fashion) }}" method="post">
                     @csrf
                     @method('delete')
@@ -32,7 +32,6 @@
     </fashion>
     @endif
     @endforeach
-    {{ $fashions->links() }}
 </div>
 
 

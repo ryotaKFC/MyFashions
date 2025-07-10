@@ -33,7 +33,7 @@ class FashionController extends Controller
         if ($filter && $filter_value) {
             $query->where($filter, $filter_value);
         }
-        $fashions = $query->orderBy($sort, $direction)->paginate(10);
+        $fashions = $query->orderBy($sort, $direction);
 
         // return view('fashions.index', compact('fashions', 'sort', 'direction'));
         return view('fashions.index', [
@@ -196,7 +196,7 @@ class FashionController extends Controller
         if ($filter && $filter_value) {
             $query->where($filter, $filter_value);
         }
-        $fashions = $query->orderBy($sort, $direction)->paginate(10);
+        $fashions = $query->orderBy($sort, $direction);
 
         return view('fashions.bookmarks', [
             'fashions' => $fashions,

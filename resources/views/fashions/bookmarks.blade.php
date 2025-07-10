@@ -42,7 +42,6 @@
     </fashion>
     @endif
     @endforeach
-    {{ $fashions->links() }}
 </div>
 
 
