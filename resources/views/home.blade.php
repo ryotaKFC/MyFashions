@@ -10,8 +10,6 @@
 @include('components.calendar')
 <!-- コーデ登録ボタン -->
 <div  class="primary-color" id="create-button"><a href="{{ route('fashions.create') }}">今日のコーデ登録</a></div>
- <!-- モーダル表示（テスト） -->
-@include('components.modal')
 
 
 <style>
