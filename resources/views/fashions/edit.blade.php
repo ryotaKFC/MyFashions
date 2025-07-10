@@ -8,11 +8,9 @@
     </div>
     <div>
         <button type="submit" class="create_btn">更新する</button>
-        
     </div>
     <div>
         <a href="{{ route('fashions.show', $fashion) }}">キャンセル</a>
-
     </div>
 </form> 
 @endsection()
