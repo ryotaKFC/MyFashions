@@ -91,6 +91,7 @@
 
 input[type="file"],
 input[type="number"],
+input[type="date"],
 select {
   width: 100%;
   padding: 6px 12px;
