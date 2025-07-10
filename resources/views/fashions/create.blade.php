@@ -7,7 +7,7 @@
         @include('components.form')
     </div>
     <div>
-        <button type="submit" class="create_btn theme-primary-color">登録する</button>
+        <button type="submit" class="create_btn primary-color">登録する</button>
     </div>
     <div>
         <a href="{{ route('fashions.index') }}">キャンセル</a>
@@ -15,22 +15,24 @@
 </form> 
 @endsection()
 <style>
-    .create_btn {
-  background-color: #1e3a8a; /* 深い青系 */
-  color: #fff;
-  font-size: 1.1rem;
-  font-weight: bold;
-  padding: 14px 30px;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: inline-block;
-  text-align: center;
-}
-
+.create_btn {
+        margin: 30px;
+        text-align: center;
+        border-radius: 8px;
+    }
+.create_btn {
+        display: inline-block;
+        border: none;
+        background-color:#191970;
+        padding: 10px 20px;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
 .create_btn:hover {
   /* background-color: #777;  */
 }
-
+    
 </style>
