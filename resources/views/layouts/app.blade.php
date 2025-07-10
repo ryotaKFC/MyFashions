@@ -132,12 +132,12 @@
 
     .page-header{
         text-align: center;
-        color:#0e4a12;
+        color:#000000;
         
     }
     .your-name{
         text-align: center;
-        color:#0e4a12;
+        color:#000000;
     }
 
     .site-title:visited,
