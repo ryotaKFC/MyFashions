@@ -126,10 +126,32 @@
 //     });
 </script>
 <style>
+/* 基本スタイル */
+body {
+  background: #f0f8ff; /* アリスブルー */
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  color: #333;
+  text-align: center;
+  padding: 30px;
+}
+
+header {
+  background-color: #d0f0fd;
+  padding: 15px 0;
+}
+
+.site-title, h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #007acc;
+  text-shadow: 1px 1px #fff;
+  margin: 20px 0;
+}
+
 /* フォーム全体 */
 .form-list {
   display: inline-block;
-  background-color: #e6f4ff; /* うすい水色 */
+  background-color: #e6f4ff;
   padding: 30px;
   border-radius: 20px;
   box-shadow: 0 0 10px #a3d8ff;
@@ -137,14 +159,12 @@
   margin-bottom: 40px;
 }
 
-/* ラベル部分 */
 .form-list dt {
   font-weight: bold;
   margin-top: 15px;
-  color: #1a73e8; /* Googleブルーっぽい青 */
+  color: #1a73e8;
 }
 
-/* 入力欄 */
 .form-list dd {
   margin-bottom: 10px;
 }
@@ -159,68 +179,44 @@ select {
   background: #fff;
   font-size: 1em;
   box-sizing: border-box;
-  margin-top: 5px;
-  margin-bottom: 10px;
+  margin: 5px 0 10px;
 }
 
-/* 画像プレビュー */
+/* プレビュー画像 */
 #preview {
-  margin: auto;
-  margin-bottom: 20px;
+  display: block;
+  margin: 0 auto 20px;
   border-radius: 10px;
   box-shadow: 0 0 8px #7bbfff;
 }
 
-/* ボタンまわり */
+/* ボタンエリア */
 .form-buttons {
   text-align: right;
   margin-top: 25px;
   padding-right: 10px;
 }
 
+/* 送信ボタン */
 .form-buttons input[type="submit"] {
-  background-color: #4aa8ff;
-  border: none;
-  padding: 10px 20px;
+  background-color: #1e3a8a;
   color: white;
   font-weight: bold;
+  font-size: 1rem;
+  padding: 12px 25px;
+  border: none;
   border-radius: 12px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .form-buttons input[type="submit"]:hover {
-  background-color: #07acc;
-}0
-
-.form-buttons a {
-  margin-left: 15px;
-  color: #007acc;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.form-buttons a:hover {
-  text-decoration: underline;
-}
-.form-buttons input[type="submit"] {
-  background: linear-gradient(to bottom, #a8d8ff, #4aa8ff); /* グラデ青 */
-  border: none;
-  padding: 10px 25px;
-  color: white;
-  font-weight: bold;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 1rem;
-  box-shadow: 0 4px 6px rgba(100, 150, 255, 0.4);
-  transition: all 0.3s ease;
-}
-
-.form-buttons input[type="submit"]:hover {
-  background: linear-gradient(to bottom, #4aa8ff, #007acc);
-  box-shadow: 0 6px 12px rgba(100, 150, 255, 0.6);
+  background-color: #162d6d;
   transform: translateY(-2px);
 }
+
+/* リンクボタン */
 .form-buttons a {
   margin-left: 15px;
   padding: 8px 16px;
@@ -235,30 +231,4 @@ select {
 .form-buttons a:hover {
   background-color: #c0e0ff;
 }
-.form-buttons {
-  text-align: right;
-  margin-top: 25px;
-  padding-right: 10px;
-}
-
-.form-buttons input[type="submit"] {
-  background: linear-gradient(to bottom, #a8d8ff, #4aa8ff);
-  border: none;
-  padding: 10px 25px;
-  color: white;
-  font-weight: bold;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 1rem;
-  box-shadow: 0 4px 6px rgba(100, 150, 255, 0.4);
-  transition: all 0.3s ease;
-}
-
-.form-buttons input[type="submit"]:hover {
-  background: linear-gradient(to bottom, #4aa8ff, #007acc);
-  box-shadow: 0 6px 12px rgba(100, 150, 255, 0.6);
-  transform: translateY(-2px);
-}
-
-
 </style>
