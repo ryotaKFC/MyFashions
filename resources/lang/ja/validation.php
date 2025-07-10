@@ -110,7 +110,11 @@ return [
     |
     */
     'attributes' => [
-        'title' => 'タイトル',
-        'body' => '本文',
+'photo_path' => '写真',
+        'season' => '季節',
+        'weather' => '天気',
+'temperature' => '気温',
+'humidity' => '湿度',
+'date' => '日付',
     ],
 ];
