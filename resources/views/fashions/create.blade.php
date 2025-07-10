@@ -15,25 +15,22 @@
 </form> 
 @endsection()
 <style>
-    .create_btn{
-        background: linear-gradient(to bottom,rgb(147, 199, 241),hsl(209, 72.50%, 57.30%)); /* グラデーション青 */
-        border: none;
-        padding: 10px 25px;
-        color: white;
-        font-weight: bold;
-        border-radius: 25px;
-        cursor: pointer;
-        font-size: 1rem;
-        box-shadow: 0 4px 6px rgba(100, 150, 255, 0.4);
-        transition: all 0.3s ease;
-        margin-top: 15px;
-    }
+    .create_btn {
+  background-color: #1e3a8a; /* 深い青系 */
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
+}
 
-    .create_btn:hover {
-        background: linear-gradient(to bottom, #4aa8ff, #007acc);
-        box-shadow: 0 6px 12px rgba(100, 150, 255, 0.6);
-        transform: translateY(-2px);
-    }
-
+.create_btn:hover {
+  /* background-color: #777;  */
+}
 
 </style>
