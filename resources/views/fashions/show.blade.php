@@ -32,17 +32,24 @@
     <div class="fashion-info-created_at">{{ $fashion->created_at->format('Y-m-d') }}</div>
 
     <div class="fashion-control">
-        <form onsubmit="return confirm('一時的に無効にしてます')">
-        <form action="{{ route('fashions.edit', $fashion) }}" method="get">
+        @if (Auth::user()->id == 10)
+            <form onsubmit="return confirm('このアカウントでは無効にしてます')">
+        @else
+            <form action="{{ route('fashions.edit', $fashion) }}" method="get">
+        @endif
             @csrf    
             <button class="edit-btn">✏️編集</button>
-        </form>
-        <form onsubmit="return confirm('一時的に無効にしてます')">
-        <!-- <form action="{{ route('fashions.destroy', $fashion) }}" method="post"> -->
+            </form>
+
+        @if (Auth::user()->id == 10)
+            <form onsubmit="return confirm('このアカウントでは無効にしてます')">
+        @else
+            <form action="{{ route('fashions.destroy', $fashion) }}" method="post">
+        @endif
             @csrf
             @method('delete')
             <button class="destroy-btn">🗑️削除</button>
-        </form>
+            </form>
     </div>
 </section>
 
