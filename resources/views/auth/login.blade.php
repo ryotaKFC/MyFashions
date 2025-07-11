@@ -8,9 +8,11 @@
             @csrf 
             <dl class="form-list">
             <dt>メールアドレス</dt>
-            <dd><input type="email" name="email" value="{{ old('email') }}"></dd>
+            <!-- <dd><input type="email" name="email" value="{{ old('email') }}"></dd> -->
+            <dd><input type="email" name="email" value="yasai@yasai.com"></dd>
             <dt>パスワード</dt>
-            <dd><input type="password" name="password"></dd>
+            <!-- <dd><input type="password" name="password"></dd> -->
+            <dd><input type="password" name="password" value="83101417"></dd>
         </dl>
     </div>
     <div>
