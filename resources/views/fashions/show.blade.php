@@ -42,9 +42,9 @@
             </form>
 
         @if (Auth::user()->email == "yasai@yasai.com")
-            <form onsubmit="return confirm('このアカウントでは無効にしてます')">
+            <!-- <form onsubmit="return confirm('このアカウントでは無効にしてます')"> -->
+                <form action="{{ route('fashions.destroy', $fashion) }}" method="post">
         @else
-            <form action="{{ route('fashions.destroy', $fashion) }}" method="post">
         @endif
             @csrf
             @method('delete')
