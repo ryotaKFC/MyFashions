@@ -32,7 +32,7 @@
     <div class="fashion-info-created_at">{{ $fashion->created_at->format('Y-m-d') }}</div>
 
     <div class="fashion-control">
-        @if (Auth::user()->email == "yasai@yasai.com")
+        @if (Auth::user()->email == "yasai@yasai.com a")
             <form onsubmit="return confirm('このアカウントでは無効にしてます')">
         @else
             <form action="{{ route('fashions.edit', $fashion) }}" method="get">
@@ -41,7 +41,7 @@
             <button class="edit-btn">✏️編集</button>
             </form>
 
-        @if (Auth::user()->email == "yasai@yasai.com")
+        @if (Auth::user()->email == "yasai@yasai.com a")
             <form onsubmit="return confirm('このアカウントでは無効にしてます')">
         @else
             <form action="{{ route('fashions.destroy', $fashion) }}" method="post">
