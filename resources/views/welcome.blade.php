@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="welcome">
-    <h1>My Fashion</h1>
+    <h1>My Fashions</h1>
     @auth
     <a class="btn" href="{{ route('home') }}">ホームへ</a>
     <a class="btn" href="{{ route('fashions.index') }}">コーデを見る</a>

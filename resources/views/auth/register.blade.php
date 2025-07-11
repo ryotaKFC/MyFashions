@@ -20,9 +20,11 @@
     </div>
     <div>
         <button type="submit" class="submit-btn">登録する</button>
+      </div>
+      <div>
         <a href="/">キャンセル</a>
+      </div>
         
-    </div>
 </form>
 </div>
 @endsection()
@@ -70,7 +72,7 @@ select {
 /* ボタンエリア */
 .submit-btn {
   text-align: right;
-  margin-top: 25px;
+  margin: 25px;
   padding-right: 10px;
 }
 

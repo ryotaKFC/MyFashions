@@ -15,6 +15,8 @@
     </div>
     <div>
         <button type="submit" class="submit-btn">ログイン</button>
+    </div>
+    <div>
         <a href="/">キャンセル</a>
     </div>
 </form>
@@ -63,7 +65,7 @@
     /* ボタンエリア */
     .submit-btn {
     text-align: right;
-    margin-top: 25px;
+    margin: 25px;
     padding-right: 10px;
     }
 
