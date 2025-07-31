@@ -4,7 +4,7 @@
 
 <form action="{{ route('fashions.store') }}" method="post" enctype="multipart/form-data">
     <div>
-        @include('components.form')
+        @include('includes.form')
     </div>
     <div>
         <button type="submit" class="create_btn primary-color">登録する</button>

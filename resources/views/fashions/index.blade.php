@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <h1 class="page-heading">コーデ検索</h1>
-@include('components.sort_and_filter')
+@include('includes.sort_and_filter')
 <div id="fashions">
     @foreach ($fashions as $fashion)
     @if ($fashion->user_id != Auth::user()->id)

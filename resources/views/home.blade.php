@@ -7,7 +7,7 @@
 <p class="your-name">ようこそ、{{ Auth::user()->name }}さん</p>
 
 <!-- カレンダー -->
-@include('components.calendar')
+@include('includes.calendar')
 <!-- コーデ登録ボタン -->
 <div  class="primary-color" id="create-button"><a href="{{ route('fashions.create') }}">今日のコーデ登録</a></div>
 

@@ -5,31 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- <link rel="stylesheet" href="/css/app.css"> -->
 </head>
 <body>
     <header class="primary-color">
-        <!-- ハンバーガーメニュー -->
-        <div class="header-left">
-            <button id="menu-btn">≡</button>
-            <!-- サイドメニュー -->
-            <nav id="side-menu">
-                <ul>
-                    @if (Auth::check())
-                        <li><a href="{{ route('home') }}">HOME</a></li>
-                        <li><a href="{{ route('fashions.index') }}">ALL</a></li>
-                        <li><a href="{{ route('bookmarks') }}">FAVORITE</a></li>
-                        <form onsubmit="return confirm('ログアウトしますか？')" action="{{ route('logout') }}" method="post">
-                            @csrf
-                            <button type="submit" id="logout-btn">ログアウト</button>
-                        </form>
-                    @else
-                        <li><a href="{{ route('login') }}">ログイン</a></li>
-                        <li><a href="{{ route('register') }}">新規登録</a></li>
-                    @endif
-                </ul>
-            </nav>
-        </div>
+        @include('includes.hamburger_menu')
         <!-- サイトのタイトル -->
         <div class="header-center">
             <h1><a href="{{ route('home') }}" class="site-title font-georgia">MyFashion</a></h1>
@@ -56,7 +37,6 @@
         menuBtn.addEventListener('click', function () {
             sideMenu.classList.toggle('open');
         });
-
         document.addEventListener('click', function (e) {
             if (!sideMenu.contains(e.target) && e.target !== menuBtn) {
                 sideMenu.classList.remove('open');
@@ -154,80 +134,5 @@
         text-align: center;
         font-size: .9rem;
         color: #777;
-    }
-
-
-    /* ハンバーガーメニュー */
-    #menu-btn {
-        font-size: 2em;
-        background-color: rgba(0, 0, 0, 0);
-        border: 0px; 
-        border-radius: 1px;
-        cursor: pointer;
-        color: rgb(255, 255, 255);
-        margin: auto 0;
-        padding: 0;
-    }
-    .header-left {
-        font-size: 2rem;
-        flex:.5;
-        position: relative;
-        top: 5px; 
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    }
-    #side-menu {
-        position: fixed;
-        top: 0;
-        left: -200px; /* 最初は隠す */
-        width: 150px;
-        height: 100%;
-        background: #222;
-        overflow-y: auto;
-        transition: left 0.3s ease;
-        z-index: 1000;
-        padding: 20px;
-    }
-    #side-menu a, #side-menu button {
-        color: rgb(255, 255, 255);
-        text-decoration: none;
-        background: none;
-        border: none;
-        font-size: 16px;
-        cursor: pointer;
-    }
-    .header-center {
-        font-size: 1.3rem;
-        color: #ffffff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    /* メニューを表示 */
-    #side-menu.open {
-        left: 0;
-    }
-    /* メニューの各アイテムの設定 */
-    #side-menu ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    #side-menu li {
-        margin-bottom: 15px;
-    }
-    
-    #side-menu li a:hover,
-    #side-menu li button:hover{
-        color: rgba(255, 255, 255, 0.4);
-    }
-
-    #logout-btn {
-        color: rgb(255, 255, 255);
-        position: absolute;
-        bottom: 30px;
-        left: 25%;
-        padding-bottom: 40px;
     }
 </style>

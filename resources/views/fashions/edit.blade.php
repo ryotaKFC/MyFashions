@@ -4,7 +4,7 @@
 <form action="{{ route('fashions.update', $fashion) }}" method="post">
     @method('patch')
     <div>
-        @include('components.form')
+        @include('includes.form')
     </div>
     <div>
         <button type="submit" class="create_btn">更新する</button>
