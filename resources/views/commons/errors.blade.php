@@ -1,5 +1,5 @@
 @if ($errors->any())
-    <ul class="alert">
+    <ul class="mt-3">
         @foreach ($errors->all() as $error)
             <li>{{ $error }}</li>
         @endforeach

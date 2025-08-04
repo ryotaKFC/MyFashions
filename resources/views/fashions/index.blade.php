@@ -2,15 +2,15 @@
 @section('content')
 <h1 class="page-heading">コーデ検索</h1>
 @include('includes.sort_and_filter')
-<div id="fashions">
+<div  class="w-[90%] mx-auto flex flex-row justify-center flex-wrap">
     @foreach ($fashions as $fashion)
     @if ($fashion->user_id != Auth::user()->id)
     @continue
     @else
-    <fashion class="fashion-item">
-        <div class="fashion-photo">
+    <fashion class="relative inline-block my-5 mx-1 max-w-36">
+        <div class="w-full h-52 object-cover">
             <!-- お気に入りボタン -->
-            <div class="favorite-btn">
+            <div class="favorite-btn absolute top-0 left-0 z-10">
                 @if (!Auth::user()->is_bookmark(fashionId: $fashion->id))
                 <form action="{{ route('bookmark.store', $fashion) }}" method="post">
                     @csrf
@@ -26,7 +26,7 @@
             </div>
             <!-- ファッションの画像 -->
             <a href="{{ route('fashions.show', $fashion) }}">
-                <img src="{{ asset('storage/avatar/' . $fashion->photo_path) }}" width="200px">
+                <img src="{{ asset('storage/avatar/' . $fashion->photo_path) }}" width="200px" class="rounded-lg">
             </a>
         </div>
     </fashion>
@@ -36,24 +36,11 @@
 
 
 <style>
-    #fashions {
-        width: 90%;
-        margin: auto;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
     .fashion-photo img {
         width: 100%;
         height: 200px;
         object-fit:cover;
         border-radius:8px;
-    }
-
-    .fashion-item {
-        margin: 20px 5px;
-        max-width: 150px;
     }
 
     .fashion-info {
@@ -63,7 +50,7 @@
         width: 200px;
         margin: auto;
         justify-content: space-evenly;
-        color:rgb(65, 142, 230);
+        color:#418ee6;
     }
     .fashion-info-item {
         margin: 1px 3px;

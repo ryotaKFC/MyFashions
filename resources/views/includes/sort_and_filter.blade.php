@@ -29,7 +29,7 @@
         <select name="filter_value" id="filter_value"></select>
     </div>
     <div class="sort-filter">
-        <button type="submit" class="primary-color">検索</button>
+        <x-button type="submit">検索</x-button>
     </div>
 </form>
 

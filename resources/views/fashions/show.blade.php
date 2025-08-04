@@ -10,7 +10,7 @@
                     @csrf
                     <button>☆</button>
                 </form>
-                @else 
+            @else
                 <form action="{{ route('bookmark.destroy', $fashion) }}" method="post">
                     @csrf
                     @method('delete')
@@ -21,31 +21,28 @@
         <img src="{{ asset('storage/avatar/' . $fashion->photo_path) }}" alt="コーデ画像">
     </div>
     <!-- fashion-info -->
-        <div class="fashion-info">
-            <a class="fashion-info-item" href="{{ route('fashions.index', ['filter' => 'season', 'filter_value' => $fashion->season]) }}">#{{ $fashion->season }}</a>
-            <a class="fashion-info-item" href="{{ route('fashions.index', ['filter' => 'weather', 'filter_value' => $fashion->weather]) }}">#{{ $fashion->weather }}</a>
-            <a class="fashion-info-item" href="{{ route('fashions.index', ['filter' => 'temperature', 'filter_value' => $fashion->temperature]) }}">#{{ $fashion->temperature }}℃</a>
-            <a class="fashion-info-item" href="{{ route('fashions.index', ['filter' => 'humidity', 'filter_value' => $fashion->humidity]) }}">#{{ $fashion->humidity }}%</a>
-            <a class="fashion-info-item" href="{{ route('fashions.index', ['filter' => 'luck', 'filter_value' => $fashion->luck]) }}">#{{ $fashion->luck }}</a>
-            <a class="fashion-info-item" href="{{ route('fashions.index', ['filter' => 'comment', 'filter_value' => $fashion->comment]) }}">#{{ $fashion->comment }}</a>
+        <div class="flex flex-row flex-wrap w-52 m-auto justify-evenly text-[#418ee6]">
+            @foreach (['season','weather','temperature', 'humidity', 'luck', 'comment'] as $value)
+                <a href="{{ route('fashions.index',['filter' => $value, 'filter_value' => $fashion->$value]) }}">#{{ $fashion->$value }}</a>
+            @endforeach
         </div>
     <div class="fashion-info-created_at">{{ $fashion->created_at->format('Y-m-d') }}</div>
 
     <div class="fashion-control">
-        @if (Auth::user()->email == "yasai@yasai.com")
+        {{-- @if (Auth::user()->email == "yasai@yasai.com")
             <form onsubmit="return confirm('このアカウントでは無効にしてます')">
-        @else
+        @else --}}
             <form action="{{ route('fashions.edit', $fashion) }}" method="get">
-        @endif
+        {{-- @endif --}}
             @csrf    
             <button class="edit-btn">✏️編集</button>
             </form>
 
-        @if (Auth::user()->email == "yasai@yasai.com")
+        {{-- @if (Auth::user()->email == "yasai@yasai.com")
             <form onsubmit="return confirm('このアカウントでは無効にしてます')">
-        @else
+        @else --}}
             <form action="{{ route('fashions.destroy', $fashion) }}" method="post">
-        @endif
+        {{-- @endif --}}
             @csrf
             @method('delete')
             <button class="destroy-btn">🗑️削除</button>

@@ -9,7 +9,8 @@
 <!-- カレンダー -->
 @include('includes.calendar')
 <!-- コーデ登録ボタン -->
-<div  class="primary-color" id="create-button"><a href="{{ route('fashions.create') }}">今日のコーデ登録</a></div>
+<x-button   href="{{ route('fashions.create') }}">今日のコーデ登録</x-button>
+{{-- <div  class="primary-color" id="create-button"><a href="{{ route('fashions.create') }}">今日のコーデ登録</a></div> --}}
 
 
 <style>

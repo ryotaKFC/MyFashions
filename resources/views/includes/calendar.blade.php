@@ -25,4 +25,7 @@
     #fc-dom-1 {
         font-size: 100%;
     }
+    .fc-scrollgrid-sync-table {
+        background-color:rgb(255, 255, 255);
+    }
 </style>
