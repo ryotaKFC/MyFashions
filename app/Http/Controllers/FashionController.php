@@ -65,18 +65,23 @@ class FashionController extends Controller
      */
     public function store(Request $request)
     {
+        $tagIds = [];
+        $user = \Auth::user();
         $this->validate($request, [
             'season' => 'required|max:20',
             'weather' => 'required|max:20',
             'temperature' => 'required|max:3',
             'humidity' => 'required|max:3',
+            'tag1' => 'max:10',
+            'tag2' => 'max:10',
+            'tag3' => 'max:10',
             'comment' => 'max:20',
         ]);
         if ($request->file('photo') == null) {
             $this->validate($request, ['photo_path' => 'required',]);
         }
         $fashion = new Fashion();
-        $fashion->timestamps = false; // 明示的に自動更新を止める
+        // $fashion->timestamps = false; // 明示的に自動更新を止める
         $fashion->created_at = Carbon::parse($request->created_at);
         $fashion->user_id = auth()->id();
         $fashion->season = $request->season;
@@ -84,19 +89,35 @@ class FashionController extends Controller
         $fashion->temperature = $request->temperature;
         $fashion->humidity = $request->humidity;
         $fashion->luck = $this->get_random_luck();
+        $fashion->date = $request->date;
+        
+        // タグの処理
+        if($request->tag1 != ''){
+            $tag = $user->createOrGetTag($request->tag1);
+            $tagIds[] = $tag->id;
+        }
+        if($request->tag2 != ''){
+            $tag = $user->createOrGetTag($request->tag2);
+            $tagIds[] = $tag->id;
+        }
+        if($request->tag3 != ''){
+            $tag = $user->createOrGetTag($request->tag3);
+            $tagIds[] = $tag->id;
+        }
         // コメント処理
         if($request->comment != '')
-        $fashion->comment = $request->comment;
+            $fashion->comment = $request->comment;
         else
-        $fashion->comment = $this->get_random_comment();
+            $fashion->comment = $this->get_random_comment();
         
         // 画像処理
         // name属性が'photo'のinputタグをファイル形式に、画像をpublic/avatarに保存
         $image_path = $request->file('photo')->store('public/avatar/');
         // 上記処理にて保存した画像に名前を付け、userテーブルのthumbnailカラムに、格納
         $fashion->photo_path = basename($image_path);
+        // 保存,同期
         $fashion->save();
-
+        $fashion->tags()->sync($tagIds);
 
         return redirect(route('fashions.index'));
     }
@@ -175,7 +196,13 @@ class FashionController extends Controller
     public function destroy(Fashion $fashion)
     {
         $this->authorize($fashion);
+        $tags = $fashion->tags;
+        
         $fashion->delete();
+        $fashion->tags()->detach();
+        foreach ($tags as $tag) {
+            $tag->deleteIfUnused();
+        }
         return redirect(route('fashions.index'));
     }
 

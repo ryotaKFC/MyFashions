@@ -43,8 +43,31 @@ class User extends Authenticatable
     ];
 
     public function fashions(){
-        return $this->belongsTo(User::class);
+        return $this->hasMany(Fashion::class);
     }
+    public function tags(){
+        return $this->hasMany(Tag::class);
+    }
+
+    public function createOrGetTag($tagName)
+    {
+        return $this->tags()->firstOrCreate(['name' => $tagName]);
+    }
+    public function tagFashions($tagName)
+    {
+        return Fashion::where('user_id', $this->id)
+                  ->whereHas('tags', function ($q) use ($tagName) {
+                      $q->where('name', $tagName);
+                  })->get();
+    }
+    public function exists_tag($tagName)
+    {
+        return Tag::where('user_id', $this->id)
+                ->where('name', $tagName)
+                ->exists();
+    }
+
+
     public function bookmarks(){
         return $this->hasMany(Bookmark::class);
     }
@@ -55,4 +78,5 @@ class User extends Authenticatable
     public function is_bookmark($fashionId){
         return $this->bookmarks()->where('fashion_id', $fashionId)->exists();
     }
+
 }

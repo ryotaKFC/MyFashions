@@ -1,0 +1,31 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Tag extends Model
+{
+    use HasFactory;
+    protected $fillable = [
+        'name', 
+        'user_id'
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function fashions()
+    {
+        return $this->belongsToMany(Fashion::class);
+    }
+    public function deleteIfUnused()
+    {
+        if ($this->fashions()->count() === 0) {
+            $this->delete();
+        }
+    }
+}

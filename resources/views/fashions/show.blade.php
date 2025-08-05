@@ -20,10 +20,13 @@
         </div>
         <img src="{{ asset('storage/avatar/' . $fashion->photo_path) }}" alt="コーデ画像">
     </div>
-    <!-- fashion-info -->
+    <!--  -->
         <div class="flex flex-row flex-wrap w-52 m-auto justify-evenly text-[#418ee6]">
-            @foreach (['season','weather','temperature', 'humidity', 'luck', 'comment'] as $value)
+            @foreach (['season','weather','temperature','humidity','luck','comment'] as $value)
                 <a href="{{ route('fashions.index',['filter' => $value, 'filter_value' => $fashion->$value]) }}">#{{ $fashion->$value }}</a>
+            @endforeach
+            @foreach ($tags = $fashion->tags->pluck('name') as $tag)
+                <a>#{{ $tag }}</a>
             @endforeach
         </div>
     <div class="fashion-info-created_at">{{ $fashion->created_at->format('Y-m-d') }}</div>
@@ -35,17 +38,17 @@
             <form action="{{ route('fashions.edit', $fashion) }}" method="get">
         {{-- @endif --}}
             @csrf    
-            <button class="edit-btn">✏️編集</button>
+            <button class="edit-btn">✏️</button>
             </form>
 
         {{-- @if (Auth::user()->email == "yasai@yasai.com")
             <form onsubmit="return confirm('このアカウントでは無効にしてます')">
         @else --}}
-            <form action="{{ route('fashions.destroy', $fashion) }}" method="post">
+            <form action="{{ route('fashions.destroy', parameters: $fashion) }}" method="post">
         {{-- @endif --}}
             @csrf
             @method('delete')
-            <button class="destroy-btn">🗑️削除</button>
+            <button class="destroy-btn">🗑️</button>
             </form>
     </div>
 </section>
