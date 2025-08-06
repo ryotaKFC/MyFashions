@@ -1,7 +1,11 @@
 @extends('layouts.app')
 @section('content')
 <h1 class="page-heading">コーデ検索</h1>
-@include('includes.sort_and_filter')
+{{-- @include('includes.sort_and_filter') --}}
+<form method="GET" action="{{ route('fashions.index') }}">
+    @include('includes.sort')
+    @include('includes.filter')
+</form>
 <div  class="w-[90%] mx-auto flex flex-row justify-center flex-wrap">
     @foreach ($fashions as $fashion)
     @if ($fashion->user_id != Auth::user()->id)
